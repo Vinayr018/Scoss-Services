@@ -1,28 +1,29 @@
+import { forwardRef } from "react";
 import { motion } from "framer-motion";
-import { Zap, Github, Twitter, Linkedin, Mail } from "lucide-react";
+import { Zap, Github, Twitter, Linkedin, Mail, Phone, MapPin } from "lucide-react";
 
 const footerLinks = {
-  product: [
-    { name: "Features", href: "#" },
-    { name: "Pricing", href: "#" },
-    { name: "Changelog", href: "#" },
-    { name: "Documentation", href: "#" },
+  services: [
+    { name: "Web Development", href: "#services" },
+    { name: "Mobile Apps", href: "#services" },
+    { name: "Cybersecurity", href: "#services" },
+    { name: "Cloud Solutions", href: "#services" },
   ],
   company: [
-    { name: "About", href: "#" },
-    { name: "Blog", href: "#" },
+    { name: "About Us", href: "#about" },
+    { name: "Our Team", href: "#about" },
     { name: "Careers", href: "#" },
-    { name: "Press", href: "#" },
+    { name: "Blog", href: "#" },
   ],
-  resources: [
-    { name: "Community", href: "#" },
+  support: [
+    { name: "Contact", href: "#contact" },
     { name: "Help Center", href: "#" },
-    { name: "Partners", href: "#" },
+    { name: "Documentation", href: "#" },
     { name: "Status", href: "#" },
   ],
   legal: [
-    { name: "Privacy", href: "#" },
-    { name: "Terms", href: "#" },
+    { name: "Privacy Policy", href: "#" },
+    { name: "Terms of Service", href: "#" },
     { name: "Security", href: "#" },
     { name: "Cookies", href: "#" },
   ],
@@ -32,17 +33,17 @@ const socialLinks = [
   { icon: Github, href: "#", label: "GitHub" },
   { icon: Twitter, href: "#", label: "Twitter" },
   { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Mail, href: "#", label: "Email" },
+  { icon: Mail, href: "mailto:info@scoss.com", label: "Email" },
 ];
 
-export const Footer = () => {
+export const Footer = forwardRef<HTMLElement>((props, ref) => {
   return (
-    <footer className="relative pt-20 pb-10 overflow-hidden">
+    <footer ref={ref} className="relative pt-20 pb-10 overflow-hidden" {...props}>
       {/* Top border */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
 
       <div className="container px-4 md:px-6">
-        <div className="grid lg:grid-cols-5 gap-12 mb-16">
+        <div className="grid lg:grid-cols-6 gap-12 mb-16">
           {/* Brand */}
           <div className="lg:col-span-2">
             <motion.a
@@ -58,9 +59,26 @@ export const Footer = () => {
               </span>
             </motion.a>
             <p className="text-muted-foreground max-w-sm mb-6">
-              Building the future of technology, one innovation at a time. 
-              Join us in shaping tomorrow's digital landscape.
+              Your trusted partner for software development, IT solutions, and digital transformation. 
+              Building the future of technology, one innovation at a time.
             </p>
+            
+            {/* Contact info */}
+            <div className="space-y-3 mb-6">
+              <a href="tel:+1234567890" className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors">
+                <Phone className="w-4 h-4" />
+                <span>+1 (234) 567-890</span>
+              </a>
+              <a href="mailto:info@scoss.com" className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors">
+                <Mail className="w-4 h-4" />
+                <span>info@scoss.com</span>
+              </a>
+              <div className="flex items-center gap-3 text-muted-foreground">
+                <MapPin className="w-4 h-4 flex-shrink-0" />
+                <span>123 Tech Street, Innovation City</span>
+              </div>
+            </div>
+
             <div className="flex items-center gap-4">
               {socialLinks.map((social) => (
                 <a
@@ -77,9 +95,9 @@ export const Footer = () => {
 
           {/* Links */}
           <div>
-            <h4 className="font-semibold mb-4">Product</h4>
+            <h4 className="font-semibold mb-4">Services</h4>
             <ul className="space-y-3">
-              {footerLinks.product.map((link) => (
+              {footerLinks.services.map((link) => (
                 <li key={link.name}>
                   <a href={link.href} className="text-muted-foreground hover:text-foreground transition-colors">
                     {link.name}
@@ -93,6 +111,19 @@ export const Footer = () => {
             <h4 className="font-semibold mb-4">Company</h4>
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
+                <li key={link.name}>
+                  <a href={link.href} className="text-muted-foreground hover:text-foreground transition-colors">
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-semibold mb-4">Support</h4>
+            <ul className="space-y-3">
+              {footerLinks.support.map((link) => (
                 <li key={link.name}>
                   <a href={link.href} className="text-muted-foreground hover:text-foreground transition-colors">
                     {link.name}
@@ -119,7 +150,7 @@ export const Footer = () => {
         {/* Bottom bar */}
         <div className="pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} SCOSS. All rights reserved.
+            © {new Date().getFullYear()} SCOSS Services. All rights reserved.
           </p>
           <div className="flex items-center gap-2 text-sm text-muted-foreground">
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
@@ -129,4 +160,6 @@ export const Footer = () => {
       </div>
     </footer>
   );
-};
+});
+
+Footer.displayName = "Footer";

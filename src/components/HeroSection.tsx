@@ -58,8 +58,8 @@ export const HeroSection = () => {
             transition={{ delay: 0.3, duration: 0.8 }}
             className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6"
           >
-            <span className="block">Build the</span>
-            <span className="gradient-text">Future of Tech</span>
+            <span className="block">Software & IT</span>
+            <span className="gradient-text">Solutions</span>
           </motion.h1>
 
           {/* Subtitle */}
@@ -69,8 +69,8 @@ export const HeroSection = () => {
             transition={{ delay: 0.5, duration: 0.8 }}
             className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10"
           >
-            Revolutionary technology solutions that push boundaries. 
-            We craft exceptional digital experiences that transform industries.
+            We provide cutting-edge web development, mobile apps, cybersecurity, 
+            and cloud consulting services to help your business thrive in the digital age.
           </motion.p>
 
           {/* CTA Buttons */}
