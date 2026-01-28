@@ -1,35 +1,18 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Sparkles, Zap } from "lucide-react";
+import { ArrowRight, Sparkles, Zap, Play } from "lucide-react";
 import { Button } from "./ui/button";
-import { GlowingOrb } from "./GlowingOrb";
 
 export const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Animated background */}
-      <div className="absolute inset-0 bg-hero-gradient" />
-      <div className="absolute inset-0 grid-pattern opacity-30" />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32">
+      {/* Light gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-background via-muted/30 to-secondary/10" />
+      <div className="absolute inset-0 grid-pattern opacity-40" />
       
-      {/* Floating orbs */}
-      <GlowingOrb 
-        className="absolute top-20 left-10 w-72 h-72 opacity-60" 
-        color="primary"
-        delay={0}
-      />
-      <GlowingOrb 
-        className="absolute bottom-20 right-10 w-96 h-96 opacity-40" 
-        color="secondary"
-        delay={2}
-      />
-      <GlowingOrb 
-        className="absolute top-1/2 left-1/3 w-48 h-48 opacity-30" 
-        color="primary"
-        delay={4}
-      />
-
-      {/* Tech lines */}
-      <div className="tech-line w-1/3 top-1/4 left-0" />
-      <div className="tech-line w-1/4 bottom-1/3 right-0" />
+      {/* Decorative shapes */}
+      <div className="absolute top-40 right-20 w-72 h-72 bg-primary/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 left-10 w-96 h-96 bg-secondary/15 rounded-full blur-3xl" />
+      <div className="absolute top-1/2 left-1/4 w-48 h-48 bg-primary/5 rounded-full blur-2xl" />
 
       <div className="container relative z-10 px-4 md:px-6">
         <motion.div
@@ -43,11 +26,11 @@ export const HeroSection = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2, duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-8"
+            className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-primary/10 border border-primary/20 mb-8"
           >
             <Sparkles className="w-4 h-4 text-primary" />
-            <span className="text-sm font-medium text-muted-foreground">
-              Introducing <span className="text-primary font-semibold">SCOSS 2.0</span>
+            <span className="text-sm font-medium text-foreground">
+              Welcome to <span className="text-primary font-bold">SCOSS Services</span>
             </span>
           </motion.div>
 
@@ -56,18 +39,28 @@ export const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6"
+            className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 text-foreground"
           >
-            <span className="block">Software & IT</span>
-            <span className="gradient-text">Solutions</span>
+            <span className="block">SMART CODE SOFTWARE</span>
+            <span className="gradient-text">SOLUTIONS & SERVICES</span>
           </motion.h1>
+
+          {/* Tagline */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.8 }}
+            className="text-xl md:text-2xl text-secondary font-semibold italic mb-4"
+          >
+            "Elevating Business through Technology"
+          </motion.p>
 
           {/* Subtitle */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.8 }}
-            className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10"
+            className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10"
           >
             We provide cutting-edge web development, mobile apps, cybersecurity, 
             and cloud consulting services to help your business thrive in the digital age.
@@ -82,9 +75,9 @@ export const HeroSection = () => {
           >
             <Button 
               size="lg" 
-              className="group relative overflow-hidden bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-6 text-lg font-semibold glow-primary"
+              className="group bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-6 text-lg font-semibold shadow-lg hover:shadow-xl transition-all"
             >
-              <span className="relative z-10 flex items-center gap-2">
+              <span className="flex items-center gap-2">
                 Get Started
                 <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
               </span>
@@ -92,9 +85,9 @@ export const HeroSection = () => {
             <Button 
               size="lg" 
               variant="outline"
-              className="group border-muted-foreground/30 hover:border-primary/50 hover:bg-primary/5 px-8 py-6 text-lg font-semibold"
+              className="group border-2 border-foreground/20 hover:border-primary hover:bg-primary/5 px-8 py-6 text-lg font-semibold"
             >
-              <Zap className="w-5 h-5 mr-2 text-primary" />
+              <Play className="w-5 h-5 mr-2 text-primary" />
               Watch Demo
             </Button>
           </motion.div>
@@ -104,18 +97,18 @@ export const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1, duration: 0.8 }}
-            className="mt-16 grid grid-cols-3 gap-8 max-w-2xl mx-auto"
+            className="mt-20 grid grid-cols-3 gap-8 max-w-2xl mx-auto"
           >
             {[
               { value: "500+", label: "Projects" },
               { value: "99%", label: "Uptime" },
               { value: "24/7", label: "Support" },
-            ].map((stat, index) => (
+            ].map((stat) => (
               <div key={stat.label} className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-primary glow-text">
+                <div className="text-3xl md:text-4xl font-bold text-primary">
                   {stat.value}
                 </div>
-                <div className="text-sm text-muted-foreground mono uppercase tracking-wider">
+                <div className="text-sm text-muted-foreground font-medium uppercase tracking-wider mt-1">
                   {stat.label}
                 </div>
               </div>

@@ -6,53 +6,57 @@
 
 @layer base {
   :root {
-    /* Dark futuristic theme */
-    --background: 222 47% 5%;
-    --foreground: 210 40% 98%;
+    /* Light professional theme with SCOSS brand colors */
+    --background: 0 0% 100%;
+    --foreground: 220 20% 15%;
 
-    --card: 222 47% 8%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 98%;
+    --card-foreground: 220 20% 15%;
 
-    --popover: 222 47% 8%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 15%;
 
-    /* Electric cyan primary */
-    --primary: 180 100% 50%;
-    --primary-foreground: 222 47% 5%;
+    /* SCOSS Red primary */
+    --primary: 0 85% 50%;
+    --primary-foreground: 0 0% 100%;
 
-    /* Purple accent */
-    --secondary: 280 100% 60%;
-    --secondary-foreground: 210 40% 98%;
+    /* SCOSS Yellow/Gold accent */
+    --secondary: 45 95% 50%;
+    --secondary-foreground: 220 20% 15%;
 
-    --muted: 222 47% 12%;
-    --muted-foreground: 215 20% 55%;
+    --muted: 220 15% 96%;
+    --muted-foreground: 220 10% 45%;
 
-    --accent: 180 100% 50%;
-    --accent-foreground: 222 47% 5%;
+    --accent: 45 95% 50%;
+    --accent-foreground: 220 20% 15%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 222 47% 15%;
-    --input: 222 47% 15%;
-    --ring: 180 100% 50%;
+    --border: 220 15% 90%;
+    --input: 220 15% 90%;
+    --ring: 0 85% 50%;
 
     --radius: 0.75rem;
 
-    /* Custom futuristic tokens */
-    --glow-primary: 180 100% 50%;
-    --glow-secondary: 280 100% 60%;
-    --glass: 222 47% 10%;
-    --glass-border: 222 47% 20%;
+    /* Custom brand tokens */
+    --glow-primary: 0 85% 50%;
+    --glow-secondary: 45 95% 50%;
+    --glass: 220 20% 98%;
+    --glass-border: 220 15% 90%;
 
-    --sidebar-background: 222 47% 6%;
-    --sidebar-foreground: 210 40% 98%;
-    --sidebar-primary: 180 100% 50%;
-    --sidebar-primary-foreground: 222 47% 5%;
-    --sidebar-accent: 222 47% 12%;
-    --sidebar-accent-foreground: 210 40% 98%;
-    --sidebar-border: 222 47% 15%;
-    --sidebar-ring: 180 100% 50%;
+    /* Dark navbar */
+    --navbar-bg: 220 30% 12%;
+    --navbar-foreground: 0 0% 100%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 220 20% 15%;
+    --sidebar-primary: 0 85% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 45 95% 95%;
+    --sidebar-accent-foreground: 220 20% 15%;
+    --sidebar-border: 220 15% 90%;
+    --sidebar-ring: 0 85% 50%;
   }
 }
 
@@ -71,48 +75,42 @@
   }
 
   ::selection {
-    @apply bg-primary/30 text-foreground;
+    @apply bg-primary/20 text-foreground;
   }
 }
 
 @layer components {
-  /* Glass morphism card */
+  /* Glass morphism card - light version */
   .glass-card {
-    @apply bg-glass/50 backdrop-blur-xl border border-glass-border/50 rounded-2xl;
+    @apply bg-card border border-border rounded-2xl shadow-lg;
     box-shadow: 
-      0 0 0 1px hsl(var(--glass-border) / 0.1),
-      0 8px 32px -8px hsl(var(--background) / 0.5),
-      inset 0 1px 0 0 hsl(var(--foreground) / 0.05);
+      0 4px 30px -10px hsl(var(--foreground) / 0.08),
+      0 0 0 1px hsl(var(--border) / 0.5);
   }
 
   /* Glow effects */
   .glow-primary {
     box-shadow: 
-      0 0 20px hsl(var(--glow-primary) / 0.3),
-      0 0 40px hsl(var(--glow-primary) / 0.2),
-      0 0 60px hsl(var(--glow-primary) / 0.1);
+      0 0 20px hsl(var(--glow-primary) / 0.2),
+      0 0 40px hsl(var(--glow-primary) / 0.1);
   }
 
   .glow-secondary {
     box-shadow: 
-      0 0 20px hsl(var(--glow-secondary) / 0.3),
-      0 0 40px hsl(var(--glow-secondary) / 0.2),
-      0 0 60px hsl(var(--glow-secondary) / 0.1);
+      0 0 20px hsl(var(--glow-secondary) / 0.25),
+      0 0 40px hsl(var(--glow-secondary) / 0.15);
   }
 
   .glow-text {
     text-shadow: 
-      0 0 10px hsl(var(--glow-primary) / 0.5),
-      0 0 20px hsl(var(--glow-primary) / 0.3),
-      0 0 40px hsl(var(--glow-primary) / 0.2);
+      0 0 10px hsl(var(--glow-primary) / 0.3),
+      0 0 20px hsl(var(--glow-primary) / 0.15);
   }
 
-  /* Gradient text */
+  /* Gradient text - SCOSS brand colors */
   .gradient-text {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 50%, hsl(var(--primary)) 100%);
-    background-size: 200% auto;
-    animation: gradient-shift 8s ease infinite;
+    background-image: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%);
   }
 
   /* Animated border gradient */
@@ -125,13 +123,13 @@
   .border-gradient::before {
     content: '';
     position: absolute;
-    inset: -1px;
-    border-radius: calc(var(--radius) + 1px);
+    inset: -2px;
+    border-radius: calc(var(--radius) + 2px);
     background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)), hsl(var(--primary)));
     background-size: 400% 400%;
     animation: gradient-shift 4s ease infinite;
     z-index: -1;
-    opacity: 0.5;
+    opacity: 0.6;
     transition: opacity 0.3s ease;
   }
 
@@ -154,28 +152,12 @@
     animation-delay: 1s;
   }
 
-  /* Pulse glow */
-  .pulse-glow {
-    animation: pulse-glow 2s ease-in-out infinite;
-  }
-
-  /* Grid pattern background */
+  /* Grid pattern background - subtle for light theme */
   .grid-pattern {
     background-image: 
-      linear-gradient(hsl(var(--border) / 0.3) 1px, transparent 1px),
-      linear-gradient(90deg, hsl(var(--border) / 0.3) 1px, transparent 1px);
+      linear-gradient(hsl(var(--border) / 0.5) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--border) / 0.5) 1px, transparent 1px);
     background-size: 60px 60px;
-  }
-
-  /* Noise texture overlay */
-  .noise-overlay::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-    opacity: 0.02;
-    pointer-events: none;
-    z-index: 1;
   }
 
   /* Hover lift effect */
@@ -184,15 +166,10 @@
   }
 
   .hover-lift:hover {
-    transform: translateY(-4px);
+    transform: translateY(-6px);
     box-shadow: 
-      0 20px 40px -15px hsl(var(--background) / 0.8),
-      0 0 20px hsl(var(--primary) / 0.1);
-  }
-
-  /* Tech line decorations */
-  .tech-line {
-    @apply absolute h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent;
+      0 20px 50px -15px hsl(var(--foreground) / 0.15),
+      0 0 20px hsl(var(--primary) / 0.08);
   }
 
   /* Monospace accent text */
@@ -200,20 +177,10 @@
     font-family: 'JetBrains Mono', monospace;
   }
 
-  /* Scan line effect */
-  .scanlines::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 2px,
-      hsl(var(--foreground) / 0.01) 2px,
-      hsl(var(--foreground) / 0.01) 4px
-    );
-    pointer-events: none;
-    z-index: 10;
+  /* Dark navbar style */
+  .dark-navbar {
+    background-color: hsl(var(--navbar-bg));
+    color: hsl(var(--navbar-foreground));
   }
 }
 
@@ -227,7 +194,7 @@
   }
 
   .text-glow {
-    text-shadow: 0 0 20px hsl(var(--primary) / 0.5);
+    text-shadow: 0 0 20px hsl(var(--primary) / 0.3);
   }
 }
 
@@ -243,25 +210,10 @@
 
 @keyframes float {
   0%, 100% {
-    transform: translateY(0px) rotate(0deg);
+    transform: translateY(0px);
   }
   50% {
-    transform: translateY(-20px) rotate(2deg);
-  }
-}
-
-@keyframes pulse-glow {
-  0%, 100% {
-    opacity: 1;
-    box-shadow: 
-      0 0 20px hsl(var(--glow-primary) / 0.3),
-      0 0 40px hsl(var(--glow-primary) / 0.2);
-  }
-  50% {
-    opacity: 0.8;
-    box-shadow: 
-      0 0 30px hsl(var(--glow-primary) / 0.5),
-      0 0 60px hsl(var(--glow-primary) / 0.3);
+    transform: translateY(-20px);
   }
 }
 
@@ -331,9 +283,6 @@
 .delay-300 { animation-delay: 0.3s; }
 .delay-400 { animation-delay: 0.4s; }
 .delay-500 { animation-delay: 0.5s; }
-.delay-600 { animation-delay: 0.6s; }
-.delay-700 { animation-delay: 0.7s; }
-.delay-800 { animation-delay: 0.8s; }
 
 /* Scrollbar styling */
 ::-webkit-scrollbar {
@@ -342,11 +291,11 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: hsl(var(--background));
+  background: hsl(var(--muted));
 }
 
 ::-webkit-scrollbar-thumb {
-  background: hsl(var(--muted));
+  background: hsl(var(--muted-foreground) / 0.3);
   border-radius: 4px;
 }
 

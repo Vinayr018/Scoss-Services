@@ -12,10 +12,7 @@ import { Footer } from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background text-foreground relative overflow-hidden noise-overlay">
-      {/* Scanline effect for extra tech feel */}
-      <div className="scanlines" />
-      
+    <div className="min-h-screen bg-background text-foreground relative overflow-hidden">
       <Navbar />
       <main>
         <HeroSection />
