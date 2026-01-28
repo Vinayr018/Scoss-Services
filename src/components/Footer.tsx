@@ -1,6 +1,7 @@
 import { forwardRef } from "react";
 import { motion } from "framer-motion";
-import { Zap, Github, Twitter, Linkedin, Mail, Phone, MapPin } from "lucide-react";
+import { Github, Twitter, Linkedin, Mail, Phone, MapPin, Facebook, Instagram } from "lucide-react";
+import scossLogo from "@/assets/scoss-logo.png";
 
 const footerLinks = {
   services: [
@@ -8,6 +9,8 @@ const footerLinks = {
     { name: "Mobile Apps", href: "#services" },
     { name: "Cybersecurity", href: "#services" },
     { name: "Cloud Solutions", href: "#services" },
+    { name: "IT Consulting", href: "#services" },
+    { name: "Technical Support", href: "#services" },
   ],
   company: [
     { name: "About Us", href: "#about" },
@@ -30,15 +33,16 @@ const footerLinks = {
 };
 
 const socialLinks = [
-  { icon: Github, href: "#", label: "GitHub" },
+  { icon: Facebook, href: "#", label: "Facebook" },
   { icon: Twitter, href: "#", label: "Twitter" },
+  { icon: Instagram, href: "#", label: "Instagram" },
   { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Mail, href: "mailto:info@scoss.com", label: "Email" },
+  { icon: Github, href: "#", label: "GitHub" },
 ];
 
 export const Footer = forwardRef<HTMLElement>((props, ref) => {
   return (
-    <footer ref={ref} className="relative pt-20 pb-10 overflow-hidden" {...props}>
+    <footer ref={ref} className="relative pt-20 pb-10 overflow-hidden bg-muted/30" {...props}>
       {/* Top border */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
 
@@ -48,15 +52,14 @@ export const Footer = forwardRef<HTMLElement>((props, ref) => {
           <div className="lg:col-span-2">
             <motion.a
               href="/"
-              className="flex items-center gap-2 group mb-6"
+              className="flex items-center gap-3 group mb-6"
               whileHover={{ scale: 1.02 }}
             >
-              <div className="relative w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                <Zap className="w-6 h-6 text-primary" />
-              </div>
-              <span className="text-2xl font-bold tracking-tight">
-                SC<span className="text-primary">OSS</span>
-              </span>
+              <img 
+                src={scossLogo} 
+                alt="SCOSS Logo" 
+                className="h-14 w-auto"
+              />
             </motion.a>
             <p className="text-muted-foreground max-w-sm mb-6">
               Your trusted partner for software development, IT solutions, and digital transformation. 
@@ -79,12 +82,12 @@ export const Footer = forwardRef<HTMLElement>((props, ref) => {
               </div>
             </div>
 
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-3">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
                   href={social.href}
-                  className="w-10 h-10 rounded-xl bg-muted/50 flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all"
+                  className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all"
                   aria-label={social.label}
                 >
                   <social.icon className="w-5 h-5" />
@@ -95,11 +98,11 @@ export const Footer = forwardRef<HTMLElement>((props, ref) => {
 
           {/* Links */}
           <div>
-            <h4 className="font-semibold mb-4">Services</h4>
+            <h4 className="font-semibold mb-4 text-foreground">Services</h4>
             <ul className="space-y-3">
               {footerLinks.services.map((link) => (
                 <li key={link.name}>
-                  <a href={link.href} className="text-muted-foreground hover:text-foreground transition-colors">
+                  <a href={link.href} className="text-muted-foreground hover:text-primary transition-colors">
                     {link.name}
                   </a>
                 </li>
@@ -108,11 +111,11 @@ export const Footer = forwardRef<HTMLElement>((props, ref) => {
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4">Company</h4>
+            <h4 className="font-semibold mb-4 text-foreground">Company</h4>
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
-                  <a href={link.href} className="text-muted-foreground hover:text-foreground transition-colors">
+                  <a href={link.href} className="text-muted-foreground hover:text-primary transition-colors">
                     {link.name}
                   </a>
                 </li>
@@ -121,11 +124,11 @@ export const Footer = forwardRef<HTMLElement>((props, ref) => {
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4">Support</h4>
+            <h4 className="font-semibold mb-4 text-foreground">Support</h4>
             <ul className="space-y-3">
               {footerLinks.support.map((link) => (
                 <li key={link.name}>
-                  <a href={link.href} className="text-muted-foreground hover:text-foreground transition-colors">
+                  <a href={link.href} className="text-muted-foreground hover:text-primary transition-colors">
                     {link.name}
                   </a>
                 </li>
@@ -134,11 +137,11 @@ export const Footer = forwardRef<HTMLElement>((props, ref) => {
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4">Legal</h4>
+            <h4 className="font-semibold mb-4 text-foreground">Legal</h4>
             <ul className="space-y-3">
               {footerLinks.legal.map((link) => (
                 <li key={link.name}>
-                  <a href={link.href} className="text-muted-foreground hover:text-foreground transition-colors">
+                  <a href={link.href} className="text-muted-foreground hover:text-primary transition-colors">
                     {link.name}
                   </a>
                 </li>
@@ -152,10 +155,9 @@ export const Footer = forwardRef<HTMLElement>((props, ref) => {
           <p className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} SCOSS Services. All rights reserved.
           </p>
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
-            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            All systems operational
-          </div>
+          <p className="text-sm text-muted-foreground italic">
+            "Elevating Business through Technology"
+          </p>
         </div>
       </div>
     </footer>
