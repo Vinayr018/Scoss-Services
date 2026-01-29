@@ -68,17 +68,17 @@ export const Footer = forwardRef<HTMLElement>((props, ref) => {
             
             {/* Contact info */}
             <div className="space-y-3 mb-6">
-              <a href="tel:+1234567890" className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors">
+              <a href="tel:+919113030506" className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors">
                 <Phone className="w-4 h-4" />
-                <span>+1 (234) 567-890</span>
+                <span>9113030506 / 8971417455</span>
               </a>
-              <a href="mailto:info@scoss.com" className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors">
+              <a href="mailto:scossservices@gmail.com" className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors">
                 <Mail className="w-4 h-4" />
-                <span>info@scoss.com</span>
+                <span>scossservices@gmail.com</span>
               </a>
               <div className="flex items-center gap-3 text-muted-foreground">
                 <MapPin className="w-4 h-4 flex-shrink-0" />
-                <span>123 Tech Street, Innovation City</span>
+                <span>Ground Floor SLN Krupa, 2nd Stage 2nd Main Mahalakshmi Nagar, Batawadi, Tumkur - 572103</span>
               </div>
             </div>
 

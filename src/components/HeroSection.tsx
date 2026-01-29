@@ -2,32 +2,31 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, Sparkles, Play } from "lucide-react";
 import { Button } from "./ui/button";
 import { useState, useEffect } from "react";
-import heroBg from "@/assets/hero-bg.jpg";
+import heroBg1 from "@/assets/hero-bg.jpg";
+import heroBg2 from "@/assets/hero-bg-2.jpg";
+import heroBg3 from "@/assets/hero-bg-3.jpg";
 
 const slides = [
   {
     title1: "SMART CODE SOFTWARE",
     title2: "SOLUTIONS & SERVICES",
     tagline: "Elevating Business through Technology",
-    description: "We provide cutting-edge web development, mobile apps, cybersecurity, and cloud consulting services to help your business thrive in the digital age."
-  },
-  {
-    title1: "WEB & MOBILE",
-    title2: "DEVELOPMENT EXPERTS",
-    tagline: "Building Digital Excellence",
-    description: "Modern, responsive websites and powerful mobile applications crafted with the latest technologies to drive your business forward."
+    description: "We provide cutting-edge web development, mobile apps, cybersecurity, and cloud consulting services to help your business thrive in the digital age.",
+    background: heroBg1,
   },
   {
     title1: "SECURE YOUR",
     title2: "DIGITAL ASSETS",
     tagline: "Cybersecurity You Can Trust",
-    description: "Enterprise-grade security solutions, penetration testing, and 24/7 threat monitoring to protect your valuable business data."
+    description: "Enterprise-grade security solutions, penetration testing, and 24/7 threat monitoring to protect your valuable business data.",
+    background: heroBg2,
   },
   {
     title1: "CLOUD SOLUTIONS",
     title2: "FOR GROWTH",
     tagline: "Scale Without Limits",
-    description: "Strategic cloud migration and optimization services with AWS, Azure, and GCP to enhance your infrastructure and reduce costs."
+    description: "Strategic cloud migration and optimization services with AWS, Azure, and GCP to enhance your infrastructure and reduce costs.",
+    background: heroBg3,
   },
 ];
 
@@ -45,22 +44,26 @@ export const HeroSection = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
-      <motion.div 
-        initial={{ scale: 1.1, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 1.5, ease: "easeOut" }}
-        className="absolute inset-0"
-      >
-        <img 
-          src={heroBg} 
-          alt="Data center background" 
-          className="w-full h-full object-cover"
-        />
-        {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/30" />
-      </motion.div>
+      {/* Background Images with Smooth Crossfade */}
+      {slides.map((s, index) => (
+        <div
+          key={index}
+          className="absolute inset-0 transition-opacity duration-1000 ease-in-out"
+          style={{ 
+            opacity: index === currentSlide ? 1 : 0,
+            zIndex: index === currentSlide ? 1 : 0
+          }}
+        >
+          <img 
+            src={s.background} 
+            alt={`Background ${index + 1}`} 
+            className="w-full h-full object-cover"
+          />
+          {/* Dark overlay for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/30" />
+        </div>
+      ))}
 
       <div className="container relative z-10 px-4 md:px-6 pt-32">
         <AnimatePresence mode="wait">
@@ -193,7 +196,7 @@ export const HeroSection = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 0.5 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-20"
       >
         {slides.map((_, index) => (
           <button
@@ -213,7 +216,7 @@ export const HeroSection = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2, duration: 0.5 }}
-        className="absolute bottom-8 right-8 hidden md:block"
+        className="absolute bottom-8 right-8 hidden md:block z-20"
       >
         <motion.div
           animate={{ y: [0, 10, 0] }}
