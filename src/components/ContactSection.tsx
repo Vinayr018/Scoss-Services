@@ -50,8 +50,8 @@ export const ContactSection = () => {
   const contactInfo = [
     {
       icon: Phone,
-      label: "WhatsApp / Phone",
-      value: "9113030506 / 8971417455",
+      label: "Call Us",
+      value: "+91 9113030506 / +91 8971417455",
       href: "https://wa.me/919113030506",
     },
     {

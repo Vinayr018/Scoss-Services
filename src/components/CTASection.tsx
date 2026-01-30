@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Rocket, Star } from "lucide-react";
+import { ArrowRight, Rocket, Star, Calendar } from "lucide-react";
 import { Button } from "./ui/button";
 import { GlowingOrb } from "./GlowingOrb";
 
@@ -52,11 +52,10 @@ export const CTASection = () => {
               </motion.div>
 
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                Ready to <span className="gradient-text">Transform</span>?
+                Start Your <span className="text-primary">Digital Journey</span> Today
               </h2>
               <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
-                Join thousands of innovators who are already building the future with SCOSS. 
-                Start your journey today.
+                Schedule a free consultation with our experts and discover how we can help you achieve your technology goals.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -65,7 +64,8 @@ export const CTASection = () => {
                   className="group relative overflow-hidden bg-primary text-primary-foreground hover:bg-primary/90 px-10 py-7 text-lg font-semibold glow-primary"
                 >
                   <span className="relative z-10 flex items-center gap-2">
-                    Start Free Trial
+                    <Calendar className="w-5 h-5" />
+                    Book Free Consultation
                     <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
                   </span>
                 </Button>
@@ -76,18 +76,6 @@ export const CTASection = () => {
                 >
                   Contact Sales
                 </Button>
-              </div>
-
-              {/* Trust badges */}
-              <div className="mt-10 flex items-center justify-center gap-8 text-muted-foreground">
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                  <span className="text-sm">No credit card required</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                  <span className="text-sm">14-day free trial</span>
-                </div>
               </div>
             </div>
           </div>
