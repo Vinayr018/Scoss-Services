@@ -50,26 +50,26 @@ export const ContactSection = () => {
   const contactInfo = [
     {
       icon: Phone,
-      label: "Phone",
-      value: "+1 (234) 567-890",
-      href: "tel:+1234567890",
+      label: "WhatsApp / Phone",
+      value: "9113030506 / 8971417455",
+      href: "https://wa.me/919113030506",
     },
     {
       icon: Mail,
       label: "Email",
-      value: "info@scoss.com",
-      href: "mailto:info@scoss.com",
+      value: "scossservices@gmail.com",
+      href: "mailto:scossservices@gmail.com",
     },
     {
       icon: MapPin,
       label: "Address",
-      value: "123 Tech Street, Innovation City, TC 12345",
-      href: "#",
+      value: "Ground Floor SLN Krupa, 2nd Stage 2nd Main Mahalakshmi Nagar, Batawadi, Tumkur - 572103",
+      href: "https://maps.google.com/?q=Mahalakshmi+Nagar+Batawadi+Tumkur+572103",
     },
     {
       icon: Clock,
       label: "Business Hours",
-      value: "Mon - Fri: 9:00 AM - 6:00 PM",
+      value: "Mon - Sat: 9:00 AM - 7:00 PM",
       href: "#",
     },
   ];
@@ -124,6 +124,8 @@ export const ContactSection = () => {
                   <motion.a
                     key={item.label}
                     href={item.href}
+                    target={item.href.startsWith("http") ? "_blank" : undefined}
+                    rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
@@ -143,17 +145,17 @@ export const ContactSection = () => {
                 ))}
               </div>
 
-              {/* Map placeholder */}
+              {/* Google Map - Tumkur Location */}
               <div className="rounded-2xl overflow-hidden h-48 bg-muted/30 relative">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387193.30596073366!2d-74.25986548248684!3d40.69714941932609!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1640000000000!5m2!1sen!2s"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3879.8!2d77.1!3d13.35!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb02e7d!2sMahalakshmi%20Nagar%2C%20Batawadi%2C%20Tumakuru%2C%20Karnataka%20572103!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
                   width="100%"
                   height="100%"
-                  style={{ border: 0, filter: "invert(90%) hue-rotate(180deg)" }}
+                  style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Office Location"
+                  title="SCOSS Office Location - Tumkur"
                 />
                 <div className="absolute inset-0 pointer-events-none border border-border/50 rounded-2xl" />
               </div>
@@ -206,7 +208,7 @@ export const ContactSection = () => {
                       id="phone"
                       name="phone"
                       type="tel"
-                      placeholder="+1 (234) 567-890"
+                      placeholder="+91 9876543210"
                       value={formData.phone}
                       onChange={handleChange}
                       className="bg-muted/30 border-border/50 focus:border-primary"
