@@ -1,11 +1,18 @@
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Send, Clock, MessageSquare } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Clock, MessageSquare, Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Label } from "./ui/label";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+
+const socialLinks = [
+  { icon: Facebook, href: "https://facebook.com", label: "Facebook" },
+  { icon: Instagram, href: "https://instagram.com", label: "Instagram" },
+  { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
+  { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
+];
 
 export const ContactSection = () => {
   const { toast } = useToast();
@@ -51,20 +58,14 @@ export const ContactSection = () => {
     {
       icon: Phone,
       label: "Call Us",
-      value: "+91 9113030506 / +91 8971417455",
-      href: "https://wa.me/919113030506",
+      value: "+91-91130 30506",
+      href: "tel:+919113030506",
     },
     {
       icon: Mail,
-      label: "Email",
+      label: "Email Us",
       value: "scossservices@gmail.com",
       href: "mailto:scossservices@gmail.com",
-    },
-    {
-      icon: MapPin,
-      label: "Address",
-      value: "Ground Floor SLN Krupa, 2nd Stage 2nd Main Mahalakshmi Nagar, Batawadi, Tumkur - 572103",
-      href: "https://maps.google.com/?q=Mahalakshmi+Nagar+Batawadi+Tumkur+572103",
     },
     {
       icon: Clock,
@@ -119,7 +120,7 @@ export const ContactSection = () => {
                 </div>
               </div>
 
-              <div className="space-y-6 mb-10">
+              <div className="space-y-6 mb-8">
                 {contactInfo.map((item, index) => (
                   <motion.a
                     key={item.label}
@@ -145,19 +146,49 @@ export const ContactSection = () => {
                 ))}
               </div>
 
-              {/* Google Map - Tumkur Location */}
-              <div className="rounded-2xl overflow-hidden h-48 bg-muted/30 relative">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3879.8!2d77.1!3d13.35!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb02e7d!2sMahalakshmi%20Nagar%2C%20Batawadi%2C%20Tumakuru%2C%20Karnataka%20572103!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="SCOSS Office Location - Tumkur"
-                />
-                <div className="absolute inset-0 pointer-events-none border border-border/50 rounded-2xl" />
+              {/* Follow Us - Social Media */}
+              <div className="mb-8">
+                <h4 className="text-lg font-semibold mb-4 flex items-center gap-2">
+                  <span>Follow Us</span>
+                </h4>
+                <div className="flex items-center gap-3">
+                  {socialLinks.map((social) => (
+                    <a
+                      key={social.label}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-11 h-11 rounded-full bg-muted/50 flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all"
+                      aria-label={social.label}
+                    >
+                      <social.icon className="w-5 h-5" />
+                    </a>
+                  ))}
+                </div>
+              </div>
+
+              {/* Visit Us - Map */}
+              <div>
+                <h4 className="text-lg font-semibold mb-4 flex items-center gap-2">
+                  <MapPin className="w-5 h-5 text-primary" />
+                  <span>Visit Us</span>
+                </h4>
+                <p className="text-muted-foreground text-sm mb-4">
+                  Ground Floor SLN Krupa, 2nd Stage 2nd Main Mahalakshmi Nagar, Batawadi, Tumkur - 572103
+                </p>
+                <div className="rounded-2xl overflow-hidden h-52 bg-muted/30 relative">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3879.123!2d77.1024!3d13.3417!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb02e84d7cffffff%3A0x123456789!2sMahalakshmi%20Nagar%2C%20Batawadi%2C%20Tumakuru%2C%20Karnataka%20572103!5e0!3m2!1sen!2sin!4v1706600000000!5m2!1sen!2sin"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="SCOSS Office Location - Tumkur"
+                  />
+                  <div className="absolute inset-0 pointer-events-none border border-border/50 rounded-2xl" />
+                </div>
               </div>
             </div>
           </motion.div>
