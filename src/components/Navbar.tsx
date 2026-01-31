@@ -6,20 +6,20 @@ import { cn } from "@/lib/utils";
 import scossLogo from "@/assets/scoss-logo.png";
 
 const navLinks = [
-  { name: "Home", href: "#" },
+  { name: "Home", href: "/" },
   { 
     name: "Services", 
-    href: "#services",
+    href: "/#services",
     dropdown: [
-      { name: "Web Development", href: "#services" },
-      { name: "Mobile Apps", href: "#services" },
-      { name: "Cybersecurity", href: "#services" },
-      { name: "Cloud Consulting", href: "#services" },
+      { name: "Web Development", href: "/#services" },
+      { name: "Mobile Apps", href: "/#services" },
+      { name: "Cybersecurity", href: "/#services" },
+      { name: "Cloud Consulting", href: "/#services" },
     ]
   },
-  { name: "About Us", href: "#about" },
-  { name: "Gallery", href: "#features" },
-  { name: "Contact", href: "#contact" },
+  { name: "About Us", href: "/about" },
+  { name: "Gallery", href: "/gallery" },
+  { name: "Contact", href: "/#contact" },
 ];
 
 const socialLinks = [
@@ -148,15 +148,15 @@ export const Navbar = () => {
             {/* Contact info + CTA */}
             <div className="hidden lg:flex items-center gap-6">
               {/* Phone */}
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-muted flex items-center justify-center">
+              <a href="tel:+919113030506" className="flex items-center gap-3 group">
+                <div className="w-10 h-10 rounded-full bg-muted flex items-center justify-center group-hover:bg-primary/10 transition-colors">
                   <Phone className="w-5 h-5 text-primary" />
                 </div>
                 <div className="text-sm">
                   <div className="text-primary font-semibold">Call Us</div>
-                  <div className="text-muted-foreground">+91 12345 67890</div>
+                  <div className="text-muted-foreground group-hover:text-primary transition-colors">9113030506</div>
                 </div>
-              </div>
+              </a>
 
               <Button className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold px-6">
                 Get Quote
@@ -210,10 +210,10 @@ export const Navbar = () => {
               
               {/* Mobile contact */}
               <div className="pt-4 border-t border-border space-y-3 px-4">
-                <div className="flex items-center gap-3">
+                <a href="tel:+919113030506" className="flex items-center gap-3">
                   <Phone className="w-5 h-5 text-primary" />
-                  <span className="text-foreground">+91 12345 67890</span>
-                </div>
+                  <span className="text-foreground">9113030506</span>
+                </a>
                 <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
                   Get Quote
                 </Button>
