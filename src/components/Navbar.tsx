@@ -9,17 +9,17 @@ const navLinks = [
   { name: "Home", href: "/" },
   { 
     name: "Services", 
-    href: "/#services",
+    href: "/services",
     dropdown: [
-      { name: "Web Development", href: "/#services" },
-      { name: "Mobile Apps", href: "/#services" },
-      { name: "Cybersecurity", href: "/#services" },
-      { name: "Cloud Consulting", href: "/#services" },
+      { name: "Web Development", href: "/services" },
+      { name: "Mobile Apps", href: "/services" },
+      { name: "Cybersecurity", href: "/services" },
+      { name: "Cloud Consulting", href: "/services" },
     ]
   },
   { name: "About Us", href: "/about" },
   { name: "Gallery", href: "/gallery" },
-  { name: "Contact", href: "/#contact" },
+  { name: "Contact", href: "/contact" },
 ];
 
 const socialLinks = [
