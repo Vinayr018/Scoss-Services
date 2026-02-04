@@ -96,7 +96,7 @@ export const Navbar = () => {
               <img 
                 src={scossLogo} 
                 alt="SCOSS Services Logo" 
-                className="h-14 w-auto object-contain"
+                className="h-20 w-auto object-contain"
               />
             </motion.a>
 
