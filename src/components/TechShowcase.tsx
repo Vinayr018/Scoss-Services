@@ -14,7 +14,7 @@ const techStack = [
 
 export const TechShowcase = () => {
   return (
-    <section className="relative py-24 overflow-hidden">
+    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
       <div className="container px-4 md:px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

@@ -12,7 +12,7 @@ const industries = [
 
 export const IndustriesSection = () => {
   return (
-    <section className="relative py-20 overflow-hidden">
+    <section className="relative min-h-screen flex items-center overflow-hidden">
       <div className="container px-4 md:px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

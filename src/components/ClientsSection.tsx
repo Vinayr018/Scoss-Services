@@ -20,7 +20,7 @@ const duplicatedClients = [...clients, ...clients];
 
 export const ClientsSection = () => {
   return (
-    <section className="relative py-16 overflow-hidden bg-muted/20">
+    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-muted/20">
       <div className="container px-4 md:px-6 mb-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

@@ -12,7 +12,7 @@ const serviceAreas = [
 
 export const ServiceAreasSection = () => {
   return (
-    <section className="py-16 bg-muted/30">
+    <section className="min-h-screen flex items-center bg-muted/30">
       <div className="container px-4 md:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

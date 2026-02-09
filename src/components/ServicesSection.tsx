@@ -15,7 +15,7 @@ export const ServicesSection = () => {
 
   return (
     <>
-      <section id="services" className="relative py-20 overflow-hidden bg-background">
+      <section id="services" className="relative min-h-screen flex items-center overflow-hidden bg-background">
         <div className="container px-4 md:px-6">
           {/* Section header */}
           <motion.div
