@@ -22,7 +22,7 @@ const partnerBenefits = [
 
 export const WhyPartnerSection = () => {
   return (
-    <section className="relative py-24 overflow-hidden bg-gradient-to-b from-muted/30 to-background">
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-b from-muted/30 to-background">
       <div className="container px-4 md:px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}

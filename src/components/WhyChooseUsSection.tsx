@@ -22,7 +22,7 @@ const features = [
 
 export const WhyChooseUsSection = () => {
   return (
-    <section className="relative py-24 overflow-hidden bg-gradient-to-b from-background to-muted/30">
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-b from-background to-muted/30">
       <div className="container px-4 md:px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}

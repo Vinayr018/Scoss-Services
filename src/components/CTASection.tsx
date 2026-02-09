@@ -5,7 +5,7 @@ import { GlowingOrb } from "./GlowingOrb";
 
 export const CTASection = () => {
   return (
-    <section className="relative py-32 overflow-hidden">
+    <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background orbs */}
       <GlowingOrb 
         className="absolute -top-20 -left-20 w-[500px] h-[500px] opacity-30" 
