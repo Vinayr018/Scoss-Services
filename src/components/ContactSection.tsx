@@ -1,303 +1,149 @@
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Send, Clock, MessageSquare, Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
+import { Phone, Mail, MapPin, ArrowRight, Headphones } from "lucide-react";
 import { Button } from "./ui/button";
-import { Input } from "./ui/input";
-import { Textarea } from "./ui/textarea";
-import { Label } from "./ui/label";
-import { useState } from "react";
-import { useToast } from "@/hooks/use-toast";
 
-const socialLinks = [
-  { icon: Facebook, href: "https://facebook.com", label: "Facebook" },
-  { icon: Instagram, href: "https://instagram.com", label: "Instagram" },
-  { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-  { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
+const contactCards = [
+  {
+    icon: Phone,
+    title: "Call Us",
+    value: "+91 91130 30506",
+    sub: "+91 89714 17455",
+    href: "tel:+919113030506",
+    color: "from-primary/20 to-primary/5",
+    iconBg: "bg-primary/10",
+    iconColor: "text-primary",
+  },
+  {
+    icon: Mail,
+    title: "Email Us",
+    value: "scossservices@gmail.com",
+    sub: "Quick response within 24hrs",
+    href: "mailto:scossservices@gmail.com",
+    color: "from-secondary/20 to-secondary/5",
+    iconBg: "bg-secondary/10",
+    iconColor: "text-secondary",
+  },
+  {
+    icon: MapPin,
+    title: "Visit Us",
+    value: "Tumkur, Karnataka",
+    sub: "SLN Krupa, Mahalakshmi Nagar",
+    href: "/contact",
+    color: "from-primary/20 to-secondary/5",
+    iconBg: "bg-primary/10",
+    iconColor: "text-primary",
+  },
 ];
 
 export const ContactSection = () => {
-  const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    company: "",
-    message: "",
-  });
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-
-    toast({
-      title: "Message sent successfully!",
-      description: "We'll get back to you within 24 hours.",
-    });
-
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      company: "",
-      message: "",
-    });
-    setIsSubmitting(false);
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }));
-  };
-
-  const contactInfo = [
-    {
-      icon: Phone,
-      label: "Call Us",
-      value: "+91-91130 30506",
-      href: "tel:+919113030506",
-    },
-    {
-      icon: Mail,
-      label: "Email Us",
-      value: "scossservices@gmail.com",
-      href: "mailto:scossservices@gmail.com",
-    },
-    {
-      icon: Clock,
-      label: "Business Hours",
-      value: "Mon - Sat: 9:00 AM - 7:00 PM",
-      href: "#",
-    },
-  ];
-
   return (
-    <section id="contact" className="relative py-32 overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 grid-pattern opacity-10" />
-      
+    <section id="contact" className="relative py-20 overflow-hidden">
+      {/* Animated background elements */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <motion.div
+          animate={{ scale: [1, 1.3, 1], opacity: [0.05, 0.1, 0.05] }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-primary/10 blur-3xl"
+        />
+        <motion.div
+          animate={{ scale: [1.2, 1, 1.2], opacity: [0.05, 0.08, 0.05] }}
+          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 3 }}
+          className="absolute -bottom-32 -left-32 w-96 h-96 rounded-full bg-secondary/10 blur-3xl"
+        />
+      </div>
+
       <div className="container relative z-10 px-4 md:px-6">
-        {/* Section header */}
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-14"
         >
-          <span className="mono text-primary text-sm uppercase tracking-widest mb-4 block">
-            // Get In Touch
+          <span className="text-primary text-sm uppercase tracking-widest mb-4 block font-semibold">
+            GET IN TOUCH
           </span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-            Let's <span className="gradient-text">Talk</span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
+            Let's Build Something <span className="text-primary">Amazing</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Have a project in mind? We'd love to hear about it. 
-            Get in touch with us and let's create something amazing together.
+            Ready to transform your business? Reach out and let's start your digital journey today.
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
-          {/* Contact info */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8 }}
-          >
-            <div className="glass-card p-8 md:p-10 h-full">
-              <div className="flex items-center gap-3 mb-8">
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                  <MessageSquare className="w-6 h-6 text-primary" />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold">Contact Information</h3>
-                  <p className="text-muted-foreground">We're here to help</p>
-                </div>
+        {/* Contact cards */}
+        <div className="grid sm:grid-cols-3 gap-6 mb-12">
+          {contactCards.map((card, index) => (
+            <motion.a
+              key={card.title}
+              href={card.href}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.15 }}
+              whileHover={{ y: -8, scale: 1.02 }}
+              className={`relative group block rounded-2xl p-6 bg-gradient-to-br ${card.color} border border-border/50 backdrop-blur-sm hover:border-primary/30 transition-colors duration-300 overflow-hidden`}
+            >
+              {/* Hover shine effect */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-r from-transparent via-white/5 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[200%]" style={{ transition: 'transform 0.8s ease' }} />
+
+              <div className={`w-14 h-14 rounded-xl ${card.iconBg} flex items-center justify-center mb-4`}>
+                <card.icon className={`w-7 h-7 ${card.iconColor}`} />
               </div>
-
-              <div className="space-y-6 mb-8">
-                {contactInfo.map((item, index) => (
-                  <motion.a
-                    key={item.label}
-                    href={item.href}
-                    target={item.href.startsWith("http") ? "_blank" : undefined}
-                    rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 + 0.3, duration: 0.5 }}
-                    className="flex items-start gap-4 group"
-                  >
-                    <div className="w-12 h-12 rounded-xl bg-muted/50 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/10 transition-colors">
-                      <item.icon className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
-                    </div>
-                    <div>
-                      <div className="text-sm text-muted-foreground">{item.label}</div>
-                      <div className="font-medium group-hover:text-primary transition-colors">
-                        {item.value}
-                      </div>
-                    </div>
-                  </motion.a>
-                ))}
-              </div>
-
-              {/* Follow Us - Social Media */}
-              <div className="mb-8">
-                <h4 className="text-lg font-semibold mb-4 flex items-center gap-2">
-                  <span>Follow Us</span>
-                </h4>
-                <div className="flex items-center gap-3">
-                  {socialLinks.map((social) => (
-                    <a
-                      key={social.label}
-                      href={social.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-11 h-11 rounded-full bg-muted/50 flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all"
-                      aria-label={social.label}
-                    >
-                      <social.icon className="w-5 h-5" />
-                    </a>
-                  ))}
-                </div>
-              </div>
-
-              {/* Visit Us - Map */}
-              <div>
-                <h4 className="text-lg font-semibold mb-4 flex items-center gap-2">
-                  <MapPin className="w-5 h-5 text-primary" />
-                  <span>Visit Us</span>
-                </h4>
-                <p className="text-muted-foreground text-sm mb-4">
-                  Ground Floor SLN Krupa, 2nd Stage 2nd Main Mahalakshmi Nagar, Batawadi, Tumkur - 572103
-                </p>
-                <div className="rounded-2xl overflow-hidden h-52 bg-muted/30 relative">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3879.123!2d77.1024!3d13.3417!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb02e84d7cffffff%3A0x123456789!2sMahalakshmi%20Nagar%2C%20Batawadi%2C%20Tumakuru%2C%20Karnataka%20572103!5e0!3m2!1sen!2sin!4v1706600000000!5m2!1sen!2sin"
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
-                    allowFullScreen
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    title="SCOSS Office Location - Tumkur"
-                  />
-                  <div className="absolute inset-0 pointer-events-none border border-border/50 rounded-2xl" />
-                </div>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Contact form */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8 }}
-          >
-            <div className="glass-card p-8 md:p-10">
-              <h3 className="text-2xl font-bold mb-8">Send us a message</h3>
-              
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid sm:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <Label htmlFor="name">Full Name *</Label>
-                    <Input
-                      id="name"
-                      name="name"
-                      placeholder="John Doe"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      className="bg-muted/30 border-border/50 focus:border-primary"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="email">Email Address *</Label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      placeholder="john@example.com"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      className="bg-muted/30 border-border/50 focus:border-primary"
-                    />
-                  </div>
-                </div>
-
-                <div className="grid sm:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <Label htmlFor="phone">Phone Number</Label>
-                    <Input
-                      id="phone"
-                      name="phone"
-                      type="tel"
-                      placeholder="+91 9876543210"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      className="bg-muted/30 border-border/50 focus:border-primary"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="company">Company Name</Label>
-                    <Input
-                      id="company"
-                      name="company"
-                      placeholder="Your Company"
-                      value={formData.company}
-                      onChange={handleChange}
-                      className="bg-muted/30 border-border/50 focus:border-primary"
-                    />
-                  </div>
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="message">Message *</Label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    placeholder="Tell us about your project..."
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    rows={5}
-                    className="bg-muted/30 border-border/50 focus:border-primary resize-none"
-                  />
-                </div>
-
-                <Button
-                  type="submit"
-                  size="lg"
-                  disabled={isSubmitting}
-                  className="w-full bg-primary text-primary-foreground hover:bg-primary/90 glow-primary"
-                >
-                  {isSubmitting ? (
-                    <span className="flex items-center gap-2">
-                      <motion.div
-                        animate={{ rotate: 360 }}
-                        transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-                        className="w-5 h-5 border-2 border-primary-foreground/30 border-t-primary-foreground rounded-full"
-                      />
-                      Sending...
-                    </span>
-                  ) : (
-                    <span className="flex items-center gap-2">
-                      Send Message
-                      <Send className="w-5 h-5" />
-                    </span>
-                  )}
-                </Button>
-              </form>
-            </div>
-          </motion.div>
+              <h3 className="text-lg font-bold text-foreground mb-1">{card.title}</h3>
+              <p className="text-foreground font-medium text-sm">{card.value}</p>
+              <p className="text-muted-foreground text-xs mt-1">{card.sub}</p>
+            </motion.a>
+          ))}
         </div>
+
+        {/* CTA Banner */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.3 }}
+          className="relative rounded-2xl overflow-hidden"
+        >
+          <div className="bg-gradient-to-r from-foreground via-foreground/95 to-foreground/90 p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-6">
+            {/* Decorative circles */}
+            <div className="absolute top-0 right-0 w-64 h-64 rounded-full bg-primary/10 -translate-y-1/2 translate-x-1/3 blur-2xl" />
+            <div className="absolute bottom-0 left-0 w-48 h-48 rounded-full bg-secondary/10 translate-y-1/2 -translate-x-1/3 blur-2xl" />
+
+            <div className="relative z-10 flex items-center gap-5">
+              <motion.div
+                animate={{ rotate: [0, 10, -10, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                className="w-16 h-16 rounded-2xl bg-primary/20 flex items-center justify-center flex-shrink-0"
+              >
+                <Headphones className="w-8 h-8 text-primary" />
+              </motion.div>
+              <div>
+                <h3 className="text-2xl md:text-3xl font-bold text-background mb-1">
+                  Start Your Digital Journey Today
+                </h3>
+                <p className="text-background/70 text-sm md:text-base">
+                  Book a free consultation and discover how we can help your business grow.
+                </p>
+              </div>
+            </div>
+
+            <div className="relative z-10 flex gap-3 flex-shrink-0">
+              <a href="/contact">
+                <Button
+                  size="lg"
+                  className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-6 text-base font-bold shadow-lg shadow-primary/30 hover:scale-105 transition-all duration-300"
+                >
+                  <span className="flex items-center gap-2">
+                    Book Free Consultation
+                    <ArrowRight className="w-5 h-5" />
+                  </span>
+                </Button>
+              </a>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
