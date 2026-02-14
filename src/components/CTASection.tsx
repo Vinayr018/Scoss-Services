@@ -1,22 +1,12 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Rocket, Star, Calendar } from "lucide-react";
 import { Button } from "./ui/button";
-import { GlowingOrb } from "./GlowingOrb";
+import { WarmBackground } from "./WarmBackground";
 
 export const CTASection = () => {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background orbs */}
-      <GlowingOrb 
-        className="absolute -top-20 -left-20 w-[500px] h-[500px] opacity-30" 
-        color="primary"
-        delay={0}
-      />
-      <GlowingOrb 
-        className="absolute -bottom-20 -right-20 w-[600px] h-[600px] opacity-20" 
-        color="secondary"
-        delay={1}
-      />
+      <WarmBackground />
 
       <div className="container relative z-10 px-4 md:px-6">
         <motion.div
@@ -26,20 +16,14 @@ export const CTASection = () => {
           transition={{ duration: 0.8 }}
           className="max-w-4xl mx-auto"
         >
-          <div className="glass-card p-12 md:p-16 text-center relative overflow-hidden">
-            {/* Animated border */}
-            <div className="absolute inset-0 rounded-2xl overflow-hidden">
-              <div className="absolute inset-[-100%] bg-gradient-conic from-primary via-secondary via-primary to-primary animate-spin-slow opacity-20" />
-            </div>
-            <div className="absolute inset-[1px] rounded-2xl bg-card" />
-
+          <div className="p-12 md:p-16 text-center relative overflow-hidden rounded-3xl bg-white/70 backdrop-blur-sm border border-white/60 shadow-[0_8px_40px_-8px_rgba(0,0,0,0.08)]">
             {/* Content */}
             <div className="relative">
               {/* Floating icons */}
               <motion.div
                 animate={{ y: [-10, 10, -10] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -top-8 left-1/4 text-primary/30"
+                className="absolute -top-8 left-1/4 text-primary/20"
               >
                 <Star className="w-8 h-8" />
               </motion.div>
@@ -51,7 +35,7 @@ export const CTASection = () => {
                 <Rocket className="w-10 h-10" />
               </motion.div>
 
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 text-foreground">
                 Start Your <span className="text-primary">Digital Journey</span> Today
               </h2>
               <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
@@ -61,18 +45,16 @@ export const CTASection = () => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button 
                   size="lg" 
-                  className="group relative overflow-hidden bg-primary text-primary-foreground hover:bg-primary/90 px-10 py-7 text-lg font-semibold glow-primary"
+                  className="group bg-primary text-primary-foreground hover:bg-primary/90 px-10 py-7 text-lg font-bold rounded-full shadow-lg shadow-primary/25 hover:shadow-primary/40 hover:scale-105 transition-all duration-300"
                 >
-                  <span className="relative z-10 flex items-center gap-2">
-                    <Calendar className="w-5 h-5" />
-                    Book Free Consultation
-                    <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-                  </span>
+                  <Calendar className="w-5 h-5 mr-2" />
+                  Book Free Consultation
+                  <ArrowRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
                 </Button>
                 <Button 
                   size="lg" 
                   variant="outline"
-                  className="border-muted-foreground/30 hover:border-primary/50 hover:bg-primary/5 px-10 py-7 text-lg font-semibold"
+                  className="border-2 border-foreground/20 hover:border-primary/40 hover:bg-primary/5 px-10 py-7 text-lg font-semibold rounded-full"
                 >
                   Contact Sales
                 </Button>

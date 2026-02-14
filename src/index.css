@@ -6,57 +6,57 @@
 
 @layer base {
   :root {
-    /* Light professional theme with SCOSS brand colors */
+    /* Clean white corporate IT theme */
     --background: 0 0% 100%;
-    --foreground: 220 20% 15%;
+    --foreground: 220 25% 16%;
 
-    --card: 0 0% 98%;
-    --card-foreground: 220 20% 15%;
+    --card: 0 0% 99%;
+    --card-foreground: 220 25% 16%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 20% 15%;
+    --popover-foreground: 220 25% 16%;
 
-    /* SCOSS Red primary */
-    --primary: 0 85% 50%;
+    /* SCOSS Red #ff2a2a */
+    --primary: 0 100% 58%;
     --primary-foreground: 0 0% 100%;
 
-    /* SCOSS Yellow/Gold accent */
-    --secondary: 45 95% 50%;
-    --secondary-foreground: 220 20% 15%;
+    /* SCOSS Warm Orange/Yellow #ffb347 */
+    --secondary: 33 100% 64%;
+    --secondary-foreground: 220 25% 16%;
 
-    --muted: 220 15% 96%;
-    --muted-foreground: 220 10% 45%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
 
-    --accent: 45 95% 50%;
-    --accent-foreground: 220 20% 15%;
+    --accent: 33 100% 64%;
+    --accent-foreground: 220 25% 16%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 15% 90%;
-    --input: 220 15% 90%;
-    --ring: 0 85% 50%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 0 100% 58%;
 
     --radius: 0.75rem;
 
     /* Custom brand tokens */
-    --glow-primary: 0 85% 50%;
-    --glow-secondary: 45 95% 50%;
-    --glass: 220 20% 98%;
-    --glass-border: 220 15% 90%;
+    --glow-primary: 0 100% 58%;
+    --glow-secondary: 33 100% 64%;
+    --glass: 0 0% 98%;
+    --glass-border: 220 13% 91%;
 
     /* Dark navbar */
     --navbar-bg: 220 30% 12%;
     --navbar-foreground: 0 0% 100%;
 
     --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 220 20% 15%;
-    --sidebar-primary: 0 85% 50%;
+    --sidebar-foreground: 220 25% 16%;
+    --sidebar-primary: 0 100% 58%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 45 95% 95%;
-    --sidebar-accent-foreground: 220 20% 15%;
-    --sidebar-border: 220 15% 90%;
-    --sidebar-ring: 0 85% 50%;
+    --sidebar-accent: 33 100% 95%;
+    --sidebar-accent-foreground: 220 25% 16%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 0 100% 58%;
   }
 }
 

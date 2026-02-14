@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { useState } from "react";
 import { ServiceDetailModal } from "./ServiceDetailModal";
 import { servicesData } from "@/data/servicesData";
+import { WarmBackground } from "./WarmBackground";
 
 export const ServicesSection = () => {
   const [selectedService, setSelectedService] = useState<typeof servicesData[0] | null>(null);
@@ -15,8 +16,9 @@ export const ServicesSection = () => {
 
   return (
     <>
-      <section id="services" className="relative min-h-screen flex items-center overflow-hidden bg-background">
-        <div className="container px-4 md:px-6">
+      <section id="services" className="relative min-h-screen flex items-center overflow-hidden">
+        <WarmBackground />
+        <div className="container relative z-10 px-4 md:px-6">
           {/* Section header */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -25,10 +27,10 @@ export const ServicesSection = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-14"
           >
-            <span className="text-primary text-sm uppercase tracking-widest mb-4 block font-semibold">
+            <span className="text-primary text-sm uppercase tracking-widest mb-4 block font-bold">
               EXPLORE OUR EXPERTISE
             </span>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
+            <h2 className="text-4xl md:text-5xl font-black mb-4 text-foreground">
               Services Designed for Your Success
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -45,7 +47,7 @@ export const ServicesSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: index * 0.08 }}
-                className="relative group cursor-pointer rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300"
+                className="relative group cursor-pointer rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300"
                 style={{ aspectRatio: "3/4" }}
                 onClick={() => handleServiceClick(service)}
               >
