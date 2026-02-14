@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { WarmBackground } from "./WarmBackground";
 
 // Import client logos
 import questAllianceLogo from "@/assets/clients/quest-alliance.png";
@@ -20,8 +21,10 @@ const duplicatedClients = [...clients, ...clients];
 
 export const ClientsSection = () => {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-muted/20">
-      <div className="container px-4 md:px-6 mb-8">
+    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
+      <WarmBackground />
+
+      <div className="container relative z-10 px-4 md:px-6 mb-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -29,7 +32,7 @@ export const ClientsSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
+          <h2 className="text-4xl md:text-5xl font-black mb-4 text-foreground">
             Our <span className="text-primary">Clients</span>
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
@@ -39,10 +42,10 @@ export const ClientsSection = () => {
       </div>
 
       {/* Infinite scrolling marquee */}
-      <div className="relative w-full overflow-hidden">
+      <div className="relative w-full overflow-hidden z-10">
         {/* Gradient overlays for fade effect */}
-        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-background to-transparent z-10" />
-        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-background to-transparent z-10" />
+        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-10" />
+        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-10" />
         
         <motion.div
           className="flex gap-12 items-center"
@@ -61,7 +64,7 @@ export const ClientsSection = () => {
           {duplicatedClients.map((client, index) => (
             <div
               key={`${client.name}-${index}`}
-              className="flex-shrink-0 bg-background rounded-2xl p-6 shadow-lg border border-border hover:shadow-xl hover:border-primary/30 transition-all duration-300 group"
+              className="flex-shrink-0 bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)] border border-white/60 hover:shadow-[0_8px_30px_-4px_rgba(0,0,0,0.1)] transition-all duration-300 group"
             >
               <img
                 src={client.logo}

@@ -39,15 +39,15 @@ export const ContactSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-8"
+          className="text-center mb-10"
         >
-          <span className="text-primary text-sm uppercase tracking-widest mb-3 block font-semibold">
+          <span className="text-primary text-sm uppercase tracking-widest mb-3 block font-bold">
             GET IN TOUCH
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold mb-2 text-foreground">
+          <h2 className="text-4xl md:text-5xl font-black mb-3 text-foreground">
             Let's Build Something <span className="text-primary">Amazing</span>
           </h2>
-          <p className="text-muted-foreground max-w-xl mx-auto text-sm">
+          <p className="text-muted-foreground max-w-xl mx-auto">
             Ready to transform your business? Reach out and let's start your digital journey.
           </p>
         </motion.div>
@@ -64,17 +64,17 @@ export const ContactSection = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ x: 8, scale: 1.01 }}
-                className="flex items-center gap-4 p-4 rounded-2xl bg-background/60 backdrop-blur-sm border border-border/50 shadow-sm hover:shadow-md transition-all duration-300 group"
+                className="flex items-center gap-4 p-5 rounded-2xl bg-white/70 backdrop-blur-sm border border-white/60 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_30px_-4px_rgba(0,0,0,0.1)] transition-all duration-300 group"
               >
                 <motion.div
                   whileHover={{ rotate: 10 }}
-                  className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors"
+                  className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/15 transition-colors"
                 >
                   <card.icon className="w-6 h-6 text-primary" />
                 </motion.div>
                 <div className="flex-1 min-w-0">
                   <h3 className="text-sm font-bold text-foreground">{card.title}</h3>
-                  <p className="text-foreground font-medium text-sm truncate">{card.value}</p>
+                  <p className="text-foreground font-semibold text-sm truncate">{card.value}</p>
                   <p className="text-muted-foreground text-xs">{card.sub}</p>
                 </div>
                 <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors opacity-0 group-hover:opacity-100" />
@@ -87,7 +87,7 @@ export const ContactSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="rounded-2xl overflow-hidden flex-1 min-h-[120px]"
+              className="rounded-2xl overflow-hidden flex-1 min-h-[130px]"
             >
               <div className="bg-gradient-to-r from-foreground via-foreground/95 to-foreground/90 p-6 h-full flex items-center gap-5 relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-48 h-48 rounded-full bg-primary/10 -translate-y-1/2 translate-x-1/3 blur-2xl" />
@@ -100,10 +100,10 @@ export const ContactSection = () => {
                   <Headphones className="w-7 h-7 text-primary" />
                 </motion.div>
                 <div className="relative z-10 flex-1">
-                  <h3 className="text-lg font-bold text-background mb-1">
+                  <h3 className="text-lg font-bold text-white mb-1">
                     Start Your Digital Journey
                   </h3>
-                  <p className="text-background/60 text-xs mb-3">
+                  <p className="text-white/60 text-xs mb-3">
                     Book a free consultation today
                   </p>
                   <a href="/contact">
@@ -126,23 +126,23 @@ export const ContactSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="rounded-2xl overflow-hidden border border-border/50 shadow-lg relative group"
+            className="rounded-2xl overflow-hidden border border-white/60 shadow-lg relative group"
           >
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3880.2!2d77.1024!3d13.3409!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDIwJzI3LjIiTiA3N8KwMDYnMDguNiJF!5e0!3m2!1sen!2sin!4v1700000000000"
               width="100%"
               height="100%"
-              style={{ border: 0, minHeight: "380px" }}
+              style={{ border: 0, minHeight: "400px" }}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               title="SCOSS Services Location - Tumkur"
             />
             {/* Map overlay label */}
-            <div className="absolute bottom-4 left-4 right-4 bg-background/90 backdrop-blur-sm rounded-lg p-3 flex items-center justify-between border border-border/50">
+            <div className="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-sm rounded-lg p-3 flex items-center justify-between border border-white/60">
               <div className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-primary" />
-                <span className="text-sm font-medium">SCOSS Services, Tumkur</span>
+                <span className="text-sm font-semibold text-foreground">SCOSS Services, Tumkur</span>
               </div>
               <a
                 href="https://maps.google.com/?q=SLN+Krupa+Mahalakshmi+Nagar+Tumkur"

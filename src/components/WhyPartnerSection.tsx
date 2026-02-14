@@ -35,14 +35,14 @@ export const WhyPartnerSection = () => {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
           >
-            <span className="mono text-primary text-sm uppercase tracking-widest mb-4 block">
+            <span className="mono text-primary text-sm uppercase tracking-widest mb-4 block font-semibold">
               // Your Trusted Partner
             </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 text-foreground leading-tight">
               Why Partner with Us for{" "}
               <span className="text-primary">Your IT Needs?</span>
             </h2>
-            <p className="text-lg text-muted-foreground mb-8">
+            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
               Based in Tumkur, we are a team of dedicated IT professionals committed to 
               delivering high-quality services. Our mission is to help businesses thrive 
               in today's digital era with reliable and innovative IT solutions.
@@ -50,9 +50,9 @@ export const WhyPartnerSection = () => {
 
             <Button 
               size="lg"
-              className="group bg-primary hover:bg-primary/90 rounded-full"
+              className="group bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg px-8 py-6 text-base font-bold shadow-lg shadow-primary/25 hover:shadow-primary/40 hover:scale-105 transition-all duration-300"
             >
-              <Calendar className="w-4 h-4 mr-2" />
+              <Calendar className="w-5 h-5 mr-2" />
               Book Free Consultation
             </Button>
           </motion.div>
@@ -72,13 +72,13 @@ export const WhyPartnerSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.15 + 0.3, duration: 0.5 }}
-                className="flex items-start gap-4 p-6 rounded-2xl bg-background/60 backdrop-blur-sm border border-border/50 shadow-sm hover:shadow-md transition-all duration-300"
+                className="flex items-start gap-4 p-6 rounded-2xl bg-white/70 backdrop-blur-sm border border-white/60 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06),0_8px_0_-4px_rgba(255,179,71,0.12)] hover:shadow-[0_8px_30px_-4px_rgba(0,0,0,0.1),0_8px_0_-4px_rgba(255,179,71,0.2)] transition-all duration-300"
               >
                 <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
                   <benefit.icon className="w-7 h-7 text-primary" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-xl mb-2">{benefit.title}</h4>
+                  <h4 className="font-bold text-xl mb-2 text-foreground">{benefit.title}</h4>
                   <p className="text-muted-foreground">{benefit.description}</p>
                 </div>
               </motion.div>
