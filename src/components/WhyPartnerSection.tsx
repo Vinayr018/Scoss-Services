@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { MapPin, Languages, Users, Calendar } from "lucide-react";
 import { Button } from "./ui/button";
+import { WarmBackground } from "./WarmBackground";
 
 const partnerBenefits = [
   {
@@ -22,8 +23,10 @@ const partnerBenefits = [
 
 export const WhyPartnerSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-b from-muted/30 to-background">
-      <div className="container px-4 md:px-6">
+    <section className="relative min-h-screen flex items-center overflow-hidden">
+      <WarmBackground />
+
+      <div className="container relative z-10 px-4 md:px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <motion.div
@@ -47,7 +50,7 @@ export const WhyPartnerSection = () => {
 
             <Button 
               size="lg"
-              className="group bg-primary hover:bg-primary/90"
+              className="group bg-primary hover:bg-primary/90 rounded-full"
             >
               <Calendar className="w-4 h-4 mr-2" />
               Book Free Consultation
@@ -60,7 +63,7 @@ export const WhyPartnerSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="space-y-6"
+            className="space-y-5"
           >
             {partnerBenefits.map((benefit, index) => (
               <motion.div
@@ -69,7 +72,7 @@ export const WhyPartnerSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.15 + 0.3, duration: 0.5 }}
-                className="flex items-start gap-4 p-6 rounded-xl bg-card border border-border hover:border-primary/30 hover:shadow-lg transition-all duration-300"
+                className="flex items-start gap-4 p-6 rounded-2xl bg-background/60 backdrop-blur-sm border border-border/50 shadow-sm hover:shadow-md transition-all duration-300"
               >
                 <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
                   <benefit.icon className="w-7 h-7 text-primary" />

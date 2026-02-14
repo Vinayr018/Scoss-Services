@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import { CheckCircle, ArrowRight, Server, Cloud, Shield, Megaphone } from "lucide-react";
+import { ArrowRight, Server, Shield, Megaphone } from "lucide-react";
 import { Button } from "./ui/button";
+import { WarmBackground } from "./WarmBackground";
 
 const features = [
   {
@@ -22,8 +23,10 @@ const features = [
 
 export const WhyChooseUsSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-b from-background to-muted/30">
-      <div className="container px-4 md:px-6">
+    <section className="relative min-h-screen flex items-center overflow-hidden">
+      <WarmBackground />
+
+      <div className="container relative z-10 px-4 md:px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <motion.div
@@ -49,7 +52,7 @@ export const WhyChooseUsSection = () => {
             <div className="flex flex-col sm:flex-row gap-4 mb-10">
               <Button 
                 size="lg"
-                className="group bg-primary hover:bg-primary/90"
+                className="group bg-primary hover:bg-primary/90 rounded-full"
               >
                 Get a Free IT Consultation
                 <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
@@ -57,7 +60,7 @@ export const WhyChooseUsSection = () => {
               <Button 
                 size="lg"
                 variant="outline"
-                className="border-primary/30 hover:bg-primary/10"
+                className="border-primary/30 hover:bg-primary/10 rounded-full"
               >
                 Explore Our Services
               </Button>
@@ -70,9 +73,9 @@ export const WhyChooseUsSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="space-y-6"
+            className="space-y-5"
           >
-            <h3 className="text-2xl font-bold mb-8">
+            <h3 className="text-2xl font-bold mb-6">
               Why Choose <span className="text-primary">Us?</span>
             </h3>
             
@@ -83,7 +86,7 @@ export const WhyChooseUsSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 + 0.3, duration: 0.5 }}
-                className="flex items-start gap-4 p-5 rounded-xl bg-card border border-border hover:border-primary/30 hover:shadow-lg transition-all duration-300"
+                className="flex items-start gap-4 p-5 rounded-2xl bg-background/60 backdrop-blur-sm border border-border/50 shadow-sm hover:shadow-md transition-all duration-300"
               >
                 <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
                   <feature.icon className="w-6 h-6 text-primary" />

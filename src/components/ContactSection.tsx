@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Phone, Mail, MapPin, ArrowRight, Headphones, ExternalLink } from "lucide-react";
 import { Button } from "./ui/button";
+import { WarmBackground } from "./WarmBackground";
 
 const contactCards = [
   {
@@ -28,20 +29,8 @@ const contactCards = [
 
 export const ContactSection = () => {
   return (
-    <section id="contact" className="relative h-screen flex items-center overflow-hidden">
-      {/* Background accents */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <motion.div
-          animate={{ scale: [1, 1.3, 1], opacity: [0.03, 0.08, 0.03] }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-primary/10 blur-3xl"
-        />
-        <motion.div
-          animate={{ scale: [1.2, 1, 1.2], opacity: [0.03, 0.06, 0.03] }}
-          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 3 }}
-          className="absolute -bottom-32 -left-32 w-96 h-96 rounded-full bg-secondary/10 blur-3xl"
-        />
-      </div>
+    <section id="contact" className="relative min-h-screen flex items-center overflow-hidden">
+      <WarmBackground />
 
       <div className="container relative z-10 px-4 md:px-6">
         {/* Header */}
@@ -75,7 +64,7 @@ export const ContactSection = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ x: 8, scale: 1.01 }}
-                className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border hover:border-primary/40 transition-all duration-300 group"
+                className="flex items-center gap-4 p-4 rounded-2xl bg-background/60 backdrop-blur-sm border border-border/50 shadow-sm hover:shadow-md transition-all duration-300 group"
               >
                 <motion.div
                   whileHover={{ rotate: 10 }}
@@ -98,11 +87,10 @@ export const ContactSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="rounded-xl overflow-hidden flex-1 min-h-[120px]"
+              className="rounded-2xl overflow-hidden flex-1 min-h-[120px]"
             >
               <div className="bg-gradient-to-r from-foreground via-foreground/95 to-foreground/90 p-6 h-full flex items-center gap-5 relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-48 h-48 rounded-full bg-primary/10 -translate-y-1/2 translate-x-1/3 blur-2xl" />
-                <div className="absolute bottom-0 left-0 w-32 h-32 rounded-full bg-secondary/10 translate-y-1/2 -translate-x-1/3 blur-2xl" />
 
                 <motion.div
                   animate={{ rotate: [0, 10, -10, 0] }}
@@ -121,7 +109,7 @@ export const ContactSection = () => {
                   <a href="/contact">
                     <Button
                       size="sm"
-                      className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold shadow-lg shadow-primary/30 hover:scale-105 transition-all duration-300"
+                      className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold shadow-lg shadow-primary/30 hover:scale-105 transition-all duration-300 rounded-lg"
                     >
                       Book Consultation
                       <ArrowRight className="w-4 h-4 ml-1" />
@@ -138,7 +126,7 @@ export const ContactSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="rounded-xl overflow-hidden border border-border shadow-lg relative group"
+            className="rounded-2xl overflow-hidden border border-border/50 shadow-lg relative group"
           >
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3880.2!2d77.1024!3d13.3409!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDIwJzI3LjIiTiA3N8KwMDYnMDguNiJF!5e0!3m2!1sen!2sin!4v1700000000000"
@@ -151,7 +139,7 @@ export const ContactSection = () => {
               title="SCOSS Services Location - Tumkur"
             />
             {/* Map overlay label */}
-            <div className="absolute bottom-4 left-4 right-4 bg-background/90 backdrop-blur-sm rounded-lg p-3 flex items-center justify-between border border-border">
+            <div className="absolute bottom-4 left-4 right-4 bg-background/90 backdrop-blur-sm rounded-lg p-3 flex items-center justify-between border border-border/50">
               <div className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-primary" />
                 <span className="text-sm font-medium">SCOSS Services, Tumkur</span>
