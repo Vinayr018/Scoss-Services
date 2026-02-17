@@ -13,7 +13,7 @@ const industries = [
 
 export const IndustriesSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
+    <section className="relative py-24 md:py-32 overflow-hidden">
       <WarmBackground />
 
       <div className="container relative z-10 px-4 md:px-6">
@@ -22,7 +22,7 @@ export const IndustriesSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-14"
+          className="text-center mb-16"
         >
           <span className="mono text-primary text-sm uppercase tracking-widest mb-4 block font-semibold">
             // Industries We Serve
@@ -37,22 +37,30 @@ export const IndustriesSection = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-5"
+          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6"
         >
           {industries.map((industry, index) => (
             <motion.div
               key={industry.name}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
-              whileHover={{ y: -8, scale: 1.03 }}
-              className="flex flex-col items-center p-6 rounded-2xl bg-white/70 backdrop-blur-sm border border-white/60 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06),0_8px_0_-4px_rgba(255,179,71,0.15)] hover:shadow-[0_8px_30px_-4px_rgba(0,0,0,0.1),0_8px_0_-4px_rgba(255,179,71,0.25)] transition-all duration-300 cursor-pointer group"
+              whileHover={{ y: -10, scale: 1.04 }}
+              className="relative flex flex-col items-center pt-8 pb-6 px-4 rounded-2xl bg-white/80 backdrop-blur-sm border border-white/70 cursor-pointer group"
+              style={{
+                boxShadow: `
+                  0 8px 32px -8px rgba(0,0,0,0.08),
+                  0 4px 0 0 rgba(255,179,71,0.35),
+                  0 6px 0 0 rgba(255,107,53,0.15)
+                `,
+              }}
             >
-              <div className="w-14 h-14 rounded-xl bg-primary flex items-center justify-center mb-4 shadow-md">
-                <industry.icon className="w-7 h-7 text-primary-foreground" />
+              {/* Red icon container */}
+              <div className="w-16 h-16 rounded-xl bg-primary flex items-center justify-center mb-5 shadow-lg shadow-primary/20 group-hover:shadow-primary/40 transition-shadow duration-300">
+                <industry.icon className="w-8 h-8 text-primary-foreground" strokeWidth={1.5} />
               </div>
-              <span className="text-sm font-semibold text-center text-foreground group-hover:text-primary transition-colors">
+              <span className="text-sm font-bold text-center text-foreground group-hover:text-primary transition-colors leading-tight">
                 {industry.name}
               </span>
             </motion.div>
