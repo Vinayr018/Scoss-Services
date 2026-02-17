@@ -11,7 +11,7 @@ const navLinks = [
     name: "Services", 
     href: "/services",
     dropdown: [
-      { name: "Website Design & Development", href: "/services/web-development" },
+      { name: "Website Design & Development", href: "/services/website-design-services-tumkur" },
       { name: "Digital Marketing", href: "/services/digital-marketing" },
       { name: "IT Infrastructure", href: "/services/it-infrastructure" },
       { name: "All Services", href: "/services" },

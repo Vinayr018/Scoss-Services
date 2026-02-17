@@ -5,7 +5,7 @@ import scossLogo from "@/assets/scoss-logo.png";
 
 const footerLinks = {
   services: [
-    { name: "Website Development", href: "/services/web-development" },
+    { name: "Website Development", href: "/services/website-design-services-tumkur" },
     { name: "Digital Marketing", href: "/services/digital-marketing" },
     { name: "IT Infrastructure", href: "/services/it-infrastructure" },
     { name: "Cloud Solutions", href: "/services" },
