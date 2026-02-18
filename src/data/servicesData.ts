@@ -15,6 +15,7 @@ export interface ServiceData {
   features: string[];
   cta: string;
   image: string;
+  link: string;
 }
 
 export const servicesData: ServiceData[] = [
@@ -35,6 +36,7 @@ export const servicesData: ServiceData[] = [
     ],
     cta: "Start Your Project",
     image: webDevImg,
+    link: "/services/website-design-services-tumkur",
   },
   {
     title: "Digital Marketing Services",
@@ -53,6 +55,7 @@ export const servicesData: ServiceData[] = [
     ],
     cta: "Grow Your Business",
     image: digitalMarketingImg,
+    link: "/services/digital-marketing",
   },
   {
     title: "Custom Software Development",
@@ -71,6 +74,7 @@ export const servicesData: ServiceData[] = [
     ],
     cta: "Learn More",
     image: softwareDevImg,
+    link: "/services/custom-software-development",
   },
   {
     title: "Cloud Solutions",
@@ -89,6 +93,7 @@ export const servicesData: ServiceData[] = [
     ],
     cta: "Explore Cloud Services",
     image: cloudImg,
+    link: "/services/cloud-solutions",
   },
   {
     title: "Cybersecurity Services",
@@ -107,6 +112,7 @@ export const servicesData: ServiceData[] = [
     ],
     cta: "View Security Solutions",
     image: cybersecurityImg,
+    link: "/services/cybersecurity",
   },
   {
     title: "IT Consulting",
@@ -125,6 +131,7 @@ export const servicesData: ServiceData[] = [
     ],
     cta: "Get Expert Advice",
     image: itConsultingImg,
+    link: "/services/it-consulting",
   },
   {
     title: "Network Solutions",
@@ -143,6 +150,7 @@ export const servicesData: ServiceData[] = [
     ],
     cta: "Discover Networks",
     image: networkImg,
+    link: "/services/network-solutions",
   },
   {
     title: "Technical Support",
@@ -161,5 +169,6 @@ export const servicesData: ServiceData[] = [
     ],
     cta: "View Support Plans",
     image: supportImg,
+    link: "/services/technical-support",
   },
 ];
