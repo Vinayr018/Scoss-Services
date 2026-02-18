@@ -2,7 +2,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, Sparkles, Play, Shield, Zap, Users } from "lucide-react";
 import { Button } from "./ui/button";
 import { useState, useEffect } from "react";
-import heroVideo from "@/assets/hero-video.mp4";
+import hero1 from "@/assets/hero/hero-1.jpeg";
+import hero2 from "@/assets/hero/hero-2.jpeg";
+import hero3 from "@/assets/hero/hero-3.jpeg";
+import hero4 from "@/assets/hero/hero-4.jpeg";
+import hero5 from "@/assets/hero/hero-5.jpeg";
+import hero6 from "@/assets/hero/hero-6.jpeg";
+
+const heroImages = [hero1, hero2, hero3, hero4, hero5, hero6];
 
 const slides = [
   {
@@ -33,6 +40,7 @@ const stats = [
 
 export const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [currentImage, setCurrentImage] = useState(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -41,20 +49,27 @@ export const HeroSection = () => {
     return () => clearInterval(timer);
   }, []);
 
+  useEffect(() => {
+    const imgTimer = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % heroImages.length);
+    }, 3000);
+    return () => clearInterval(imgTimer);
+  }, []);
   const slide = slides[currentSlide];
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Single Video Background */}
+      {/* Image Slideshow Background */}
       <div className="absolute inset-0" style={{ zIndex: 1 }}>
-        <video 
-          src={heroVideo} 
-          autoPlay 
-          muted 
-          loop 
-          playsInline
-          className="w-full h-full object-cover"
-        />
+        {heroImages.map((img, index) => (
+          <img
+            key={index}
+            src={img}
+            alt={`SCOSS Services ${index + 1}`}
+            className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
+            style={{ opacity: index === currentImage ? 1 : 0 }}
+          />
+        ))}
         {/* Multi-layer overlay for depth */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/40" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/40" />
