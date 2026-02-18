@@ -3,7 +3,7 @@ import { ArrowRight, Sparkles, Play, Shield, Zap, Users } from "lucide-react";
 import { Button } from "./ui/button";
 import { useState, useEffect } from "react";
 import heroBg1 from "@/assets/hero-bg.jpg";
-import heroBg2 from "@/assets/hero-bg-2.jpg";
+import heroVideo from "@/assets/hero-video.mp4";
 import heroBg3 from "@/assets/hero-bg-3.jpg";
 
 const slides = [
@@ -13,20 +13,23 @@ const slides = [
     tagline: "Digital Transformation Services",
     description: "Transform your business with comprehensive IT services, custom software development, and technology consulting.",
     background: heroBg1,
-  },
-  {
-    title1: "Professional Website",
-    title2: "Design & Development",
-    tagline: "Custom Solutions for Your Business",
-    description: "From business websites to e-commerce platforms, we create digital experiences that convert visitors into customers.",
-    background: heroBg2,
+    type: "image" as const,
   },
   {
     title1: "Digital Marketing",
     title2: "That Delivers Results",
     tagline: "Grow Your Online Presence",
     description: "SEO, social media marketing, PPC campaigns, and content marketing strategies to boost your visibility and revenue.",
+    background: heroVideo,
+    type: "video" as const,
+  },
+  {
+    title1: "Professional Website",
+    title2: "Design & Development",
+    tagline: "Custom Solutions for Your Business",
+    description: "From business websites to e-commerce platforms, we create digital experiences that convert visitors into customers.",
     background: heroBg3,
+    type: "image" as const,
   },
 ];
 
@@ -66,11 +69,22 @@ export const HeroSection = () => {
           className="absolute inset-0"
           style={{ zIndex: index === currentSlide ? 1 : 0 }}
         >
-          <img 
-            src={s.background} 
-            alt={`Background ${index + 1}`} 
-            className="w-full h-full object-cover"
-          />
+          {s.type === "video" ? (
+            <video 
+              src={s.background} 
+              autoPlay 
+              muted 
+              loop 
+              playsInline
+              className="w-full h-full object-cover"
+            />
+          ) : (
+            <img 
+              src={s.background} 
+              alt={`Background ${index + 1}`} 
+              className="w-full h-full object-cover"
+            />
+          )}
           {/* Multi-layer overlay for depth */}
           <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/40" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/40" />
