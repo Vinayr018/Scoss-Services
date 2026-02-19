@@ -1,7 +1,8 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { WarmBackground } from "@/components/WarmBackground";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Send, Clock, MessageSquare, Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Clock, MessageSquare, Facebook, Instagram, Linkedin, Twitter, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -69,6 +70,12 @@ const Contact = () => {
       href: "mailto:scossservices@gmail.com",
     },
     {
+      icon: MessageCircle,
+      label: "WhatsApp Us",
+      value: "+91-91130 30506",
+      href: "https://wa.me/919113030506?text=Hello%20SCOSS%20Services",
+    },
+    {
       icon: Clock,
       label: "Business Hours",
       value: "Mon - Sat: 9:00 AM - 7:00 PM",
@@ -77,9 +84,10 @@ const Contact = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background text-foreground relative overflow-hidden">
+      <WarmBackground />
       <Navbar />
-      <main className="pt-32 pb-20">
+      <main className="pt-32 pb-20 relative z-10">
         <div className="container px-4 md:px-6">
           {/* Page header */}
           <motion.div

@@ -3,6 +3,7 @@ import { useState, useEffect, useCallback } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { WarmBackground } from "@/components/WarmBackground";
 
 // Import gallery images
 import anon1 from "@/assets/gallery/anon-1.jpg";
@@ -87,10 +88,11 @@ const Gallery = () => {
   }, [selectedImage]);
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background text-foreground relative overflow-hidden">
+      <WarmBackground />
       <Navbar />
       
-      <main className="pt-32 pb-20">
+      <main className="pt-32 pb-20 relative z-10">
         <div className="container px-4 md:px-6">
           {/* Header */}
           <motion.div

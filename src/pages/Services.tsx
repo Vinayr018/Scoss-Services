@@ -1,8 +1,10 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { WarmBackground } from "@/components/WarmBackground";
 import { motion } from "framer-motion";
 import { ArrowRight, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 // Import service images
 import webDevImg from "@/assets/services/web-dev.jpg";
@@ -20,56 +22,65 @@ const services = [
     description: "Modern, responsive websites crafted to elevate your digital presence and drive business growth.",
     features: ["Custom design", "Mobile optimization", "SEO-friendly development", "E-commerce solutions", "CMS integration"],
     image: webDevImg,
+    href: "/services/web-development",
   },
   {
     title: "Digital Marketing Services",
     description: "Results-driven digital marketing strategies to boost your online presence and growth.",
     features: ["SEO optimization", "Social media marketing", "PPC campaigns", "Content marketing", "Email marketing"],
     image: digitalMarketingImg,
+    href: "/services/digital-marketing",
   },
   {
     title: "Custom Software Development",
     description: "Custom software solutions tailored to your specific business needs and workflows.",
     features: ["Web applications", "Mobile apps", "Desktop software", "API development", "System integration"],
     image: softwareDevImg,
+    href: "/services/custom-software-development",
   },
   {
     title: "Cloud Solutions",
     description: "Secure and scalable cloud infrastructure services for modern businesses.",
     features: ["Cloud migration", "Infrastructure optimization", "Managed services", "Backup solutions", "Cost optimization"],
     image: cloudImg,
+    href: "/services/cloud-solutions",
   },
   {
     title: "Cybersecurity Services",
     description: "Comprehensive security solutions to protect your digital assets and data.",
     features: ["Security assessment", "Threat detection", "Incident response", "Compliance", "Security training"],
     image: cybersecurityImg,
+    href: "/services/cybersecurity",
   },
   {
     title: "IT Consulting",
     description: "Strategic technology consulting to drive digital transformation and business growth.",
     features: ["IT strategy", "Digital transformation", "Technology roadmap", "Process optimization", "Vendor management"],
     image: itConsultingImg,
+    href: "/services/it-consulting",
   },
   {
     title: "Network Solutions",
     description: "Reliable network infrastructure design, implementation, and management.",
     features: ["Network design", "Implementation", "Monitoring", "Troubleshooting", "Performance optimization"],
     image: networkImg,
+    href: "/services/network-solutions",
   },
   {
     title: "Technical Support",
     description: "24/7 technical support and maintenance services to keep your systems running smoothly.",
     features: ["Help desk", "Remote support", "On-site support", "System maintenance", "Hardware support"],
     image: supportImg,
+    href: "/services/technical-support",
   },
 ];
 
 const Services = () => {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background text-foreground relative overflow-hidden">
+      <WarmBackground />
       <Navbar />
-      <main className="pt-32 pb-20">
+      <main className="pt-32 pb-20 relative z-10">
         <div className="container px-4 md:px-6">
           {/* Page header */}
           <motion.div
@@ -126,10 +137,12 @@ const Services = () => {
                     ))}
                   </div>
 
-                  <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
-                    Learn More
-                    <ArrowRight className="w-4 h-4 ml-2" />
-                  </Button>
+                  <Link to={service.href} className="w-full block">
+                    <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
+                      Learn More
+                      <ArrowRight className="w-4 h-4 ml-2" />
+                    </Button>
+                  </Link>
                 </div>
               </motion.div>
             ))}

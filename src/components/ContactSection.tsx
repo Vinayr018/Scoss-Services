@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Phone, Mail, MapPin, ArrowRight, Headphones, ExternalLink } from "lucide-react";
+import { Phone, Mail, MapPin, ArrowRight, Headphones, ExternalLink, MessageCircle } from "lucide-react";
 import { Button } from "./ui/button";
 import { WarmBackground } from "./WarmBackground";
 
@@ -17,6 +17,13 @@ const contactCards = [
     value: "scossservices@gmail.com",
     sub: "Quick response within 24hrs",
     href: "mailto:scossservices@gmail.com",
+  },
+  {
+    icon: MessageCircle,
+    title: "WhatsApp Us",
+    value: "+91 91130 30506",
+    sub: "Message us on WhatsApp",
+    href: "https://wa.me/919113030506?text=Hello%20SCOSS%20Services",
   },
   {
     icon: MapPin,
@@ -59,6 +66,8 @@ export const ContactSection = () => {
               <motion.a
                 key={card.title}
                 href={card.href}
+                target={card.href.startsWith("http") ? "_blank" : undefined}
+                rel={card.href.startsWith("http") ? "noopener noreferrer" : undefined}
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}

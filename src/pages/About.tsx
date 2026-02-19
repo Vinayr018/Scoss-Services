@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Target, Eye, Heart, Users, Award, Rocket, Calendar, Lightbulb, GraduationCap, Briefcase } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { WarmBackground } from "@/components/WarmBackground";
 import companyBuilding from "@/assets/company-building.jpg";
 
 const values = [
@@ -53,10 +54,11 @@ const offerings = [
 
 const About = () => {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background text-foreground relative overflow-hidden">
+      <WarmBackground />
       <Navbar />
       
-      <main className="pt-32 pb-20">
+      <main className="pt-32 pb-20 relative z-10">
         <div className="container px-4 md:px-6">
           {/* Section header */}
           <motion.div
