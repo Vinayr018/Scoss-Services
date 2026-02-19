@@ -17,6 +17,7 @@ import Cybersecurity from "./pages/Cybersecurity";
 import ITConsulting from "./pages/ITConsulting";
 import NetworkSolutions from "./pages/NetworkSolutions";
 import TechnicalSupport from "./pages/TechnicalSupport";
+import Internship from "./pages/Internship";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -43,6 +44,7 @@ const App = () => (
           <Route path="/services/network-solutions" element={<NetworkSolutions />} />
           <Route path="/services/technical-support" element={<TechnicalSupport />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/internship" element={<Internship />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

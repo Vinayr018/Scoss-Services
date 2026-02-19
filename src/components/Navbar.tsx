@@ -19,6 +19,7 @@ const navLinks = [
   },
   { name: "About Us", href: "/about" },
   { name: "Gallery", href: "/gallery" },
+  { name: "Internship", href: "/internship" },
   { name: "Contact", href: "/contact" },
 ];
 
