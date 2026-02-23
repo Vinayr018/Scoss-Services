@@ -7,6 +7,8 @@ import agritechLogo from "@/assets/clients/agritech.jpg";
 import anonLogo from "@/assets/clients/anon.jpg";
 import codeeasyLogo from "@/assets/clients/codeeasy.png";
 import goasLogo from "@/assets/clients/goas.webp";
+import findreamsLogo from "@/assets/clients/findreams.png";
+import slvDieselLogo from "@/assets/clients/slv-diesel.png";
 
 const clients = [
   { name: "Quest Alliance", logo: questAllianceLogo },
@@ -14,6 +16,8 @@ const clients = [
   { name: "Anon", logo: anonLogo },
   { name: "CodeEasy", logo: codeeasyLogo },
   { name: "GOAS", logo: goasLogo },
+  { name: "Findreams", logo: findreamsLogo },
+  { name: "SLV Diesel", logo: slvDieselLogo },
 ];
 
 // Double the array for seamless infinite scroll

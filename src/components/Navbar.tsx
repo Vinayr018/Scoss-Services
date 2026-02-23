@@ -159,9 +159,11 @@ export const Navbar = () => {
                 </div>
               </a>
 
-              <Button className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold px-6">
-                Get Quote
-              </Button>
+              <a href="/contact">
+                <Button className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold px-6">
+                  Get Quote
+                </Button>
+              </a>
             </div>
 
             {/* Mobile Menu Button */}
@@ -215,9 +217,11 @@ export const Navbar = () => {
                   <Phone className="w-5 h-5 text-primary" />
                   <span className="text-foreground">9113030506</span>
                 </a>
-                <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
-                  Get Quote
-                </Button>
+                <a href="/contact" className="block">
+                  <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
+                    Get Quote
+                  </Button>
+                </a>
               </div>
             </div>
           </motion.div>

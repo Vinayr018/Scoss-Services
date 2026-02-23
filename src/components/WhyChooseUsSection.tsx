@@ -50,13 +50,15 @@ export const WhyChooseUsSection = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-10">
-              <Button 
-                size="lg"
-                className="group bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-8 py-6 text-base font-bold shadow-lg shadow-primary/25 hover:shadow-primary/40 hover:scale-105 transition-all duration-300"
-              >
-                Get a Free IT Consultation
-                <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
-              </Button>
+              <a href="/contact">
+                <Button 
+                  size="lg"
+                  className="group bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-8 py-6 text-base font-bold shadow-lg shadow-primary/25 hover:shadow-primary/40 hover:scale-105 transition-all duration-300"
+                >
+                  Get a Free IT Consultation
+                  <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
+                </Button>
+              </a>
               <Button 
                 size="lg"
                 variant="outline"
@@ -98,13 +100,15 @@ export const WhyChooseUsSection = () => {
               </motion.div>
             ))}
 
-            <Button 
-              variant="link" 
-              className="text-primary mt-4 p-0 font-semibold"
-            >
-              Schedule a Free IT Consultation
-              <ArrowRight className="w-4 h-4 ml-2" />
-            </Button>
+            <a href="/contact">
+              <Button 
+                variant="link" 
+                className="text-primary mt-4 p-0 font-semibold"
+              >
+                Schedule a Free IT Consultation
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </Button>
+            </a>
           </motion.div>
         </div>
       </div>

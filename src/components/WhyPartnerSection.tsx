@@ -48,13 +48,15 @@ export const WhyPartnerSection = () => {
               in today's digital era with reliable and innovative IT solutions.
             </p>
 
-            <Button 
-              size="lg"
-              className="group bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg px-8 py-6 text-base font-bold shadow-lg shadow-primary/25 hover:shadow-primary/40 hover:scale-105 transition-all duration-300"
-            >
-              <Calendar className="w-5 h-5 mr-2" />
-              Book Free Consultation
-            </Button>
+            <a href="/contact">
+              <Button 
+                size="lg"
+                className="group bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg px-8 py-6 text-base font-bold shadow-lg shadow-primary/25 hover:shadow-primary/40 hover:scale-105 transition-all duration-300"
+              >
+                <Calendar className="w-5 h-5 mr-2" />
+                Book Free Consultation
+              </Button>
+            </a>
           </motion.div>
 
           {/* Right Content - Benefits */}

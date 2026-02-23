@@ -138,7 +138,7 @@ export const ContactSection = () => {
             className="rounded-2xl overflow-hidden border border-white/60 shadow-lg relative group"
           >
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3880.2!2d77.1024!3d13.3409!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDIwJzI3LjIiTiA3N8KwMDYnMDguNiJF!5e0!3m2!1sen!2sin!4v1700000000000"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3879.5598!2d77.1267164!3d13.3254536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2f1f67bd60167d69%3A0x50d617767a87848!2sSCOSS%20SERVICES!5e0!3m2!1sen!2sin!4v1708627200000!5m2!1sen!2sin"
               width="100%"
               height="100%"
               style={{ border: 0, minHeight: "400px" }}

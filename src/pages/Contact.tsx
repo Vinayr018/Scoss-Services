@@ -181,7 +181,7 @@ const Contact = () => {
                   </p>
                   <div className="rounded-2xl overflow-hidden h-64 bg-muted/30 relative">
                     <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3879.123!2d77.1024!3d13.3417!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb02e84d7cffffff%3A0x123456789!2sMahalakshmi%20Nagar%2C%20Batawadi%2C%20Tumakuru%2C%20Karnataka%20572103!5e0!3m2!1sen!2sin!4v1706600000000!5m2!1sen!2sin"
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3879.5598!2d77.1267164!3d13.3254536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2f1f67bd60167d69%3A0x50d617767a87848!2sSCOSS%20SERVICES!5e0!3m2!1sen!2sin!4v1708627200000!5m2!1sen!2sin"
                       width="100%"
                       height="100%"
                       style={{ border: 0 }}
