@@ -8,7 +8,7 @@ import anonLogo from "@/assets/clients/anon.jpg";
 import codeeasyLogo from "@/assets/clients/codeeasy.png";
 import goasLogo from "@/assets/clients/goas.webp";
 import findreamsLogo from "@/assets/clients/findreams.png";
-import slvDieselLogo from "@/assets/clients/slv-diesel.png";
+import slvDieselLogo from "@/assets/clients/slv-diesel.jpg";
 
 const clients = [
   { name: "Quest Alliance", logo: questAllianceLogo },
