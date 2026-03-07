@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WarmBackground } from "@/components/WarmBackground";
+import { SEOHead } from "@/components/SEOHead";
 import { motion } from "framer-motion";
 import { 
   Globe, Smartphone, ShoppingCart, RefreshCcw, Wrench, 
@@ -13,7 +14,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { useEffect } from "react";
 
 const webServices = [
   {
@@ -33,59 +33,46 @@ const webServices = [
   },
   {
     icon: RefreshCcw,
-    title: "Website Redesign",
-    description: "Modern upgrades for outdated websites with improved UX and contemporary design."
-  },
-  {
-    icon: Wrench,
-    title: "Maintenance & Support",
-    description: "Ongoing updates, security patches, backups, and technical support."
+    title: "Website Redesign & Revamp",
+    description: "Modernize your existing website for better UX, performance, and conversion rates."
   },
   {
     icon: Smartphone,
-    title: "Mobile-First Development",
-    description: "Responsive websites that work flawlessly across all devices."
+    title: "Mobile-Responsive Design",
+    description: "Websites that look and function perfectly across all devices and screen sizes."
+  },
+  {
+    icon: Search,
+    title: "SEO-Optimized Websites",
+    description: "Built with search engine optimization in mind from the ground up for maximum visibility."
+  },
+  {
+    icon: Lock,
+    title: "Secure & Fast Hosting",
+    description: "Reliable hosting solutions with SSL, backups, and performance optimization."
+  },
+  {
+    icon: Wrench,
+    title: "Website Maintenance",
+    description: "Ongoing support, updates, and maintenance to keep your website running at peak performance."
   },
 ];
 
-const whyChooseUs = [
-  { icon: Palette, text: "Custom brand-focused designs" },
-  { icon: Smartphone, text: "Mobile-optimized responsive layouts" },
-  { icon: Zap, text: "Fast loading speed and performance" },
+const benefits = [
+  { icon: Zap, text: "Lightning-fast load speeds" },
+  { icon: TabletSmartphone, text: "100% mobile responsive" },
   { icon: Search, text: "SEO-optimized structure" },
-  { icon: Lock, text: "Scalable architecture for growth" },
-];
-
-const relatedServices = [
-  {
-    icon: Megaphone,
-    title: "Digital Marketing & SEO Services",
-    href: "/services/digital-marketing",
-  },
-  {
-    icon: TabletSmartphone,
-    title: "Mobile App Development",
-    href: "/services",
-  },
+  { icon: CheckCircle, text: "Industry-best practices" },
 ];
 
 const WebDevelopment = () => {
   const [formData, setFormData] = useState({
     name: "",
-    email: "",
     phone: "",
     company: "",
     details: "",
     budget: "",
   });
-
-  useEffect(() => {
-    document.title = "Professional Website Design Services in Tumkur | Web Development Company | SCOSS Services";
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) {
-      meta.setAttribute("content", "Looking for expert website design services in Tumkur? We specialize in custom websites, e-commerce, and responsive solutions. Get a free consultation today.");
-    }
-  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -97,6 +84,17 @@ const WebDevelopment = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <SEOHead
+        title="Website Design Services in Tumkur | SCOSS Services"
+        description="Looking for expert website design services in Tumkur? We specialize in custom websites, e-commerce, and responsive solutions. Get a free consultation today."
+        schemaType="Service"
+        serviceName="Website Design & Development"
+        breadcrumbs={[
+          { name: "Home", href: "/" },
+          { name: "Services", href: "/services" },
+          { name: "Website Design", href: "/services/website-design-services-tumkur" },
+        ]}
+      />
       <Navbar />
       
       {/* Hero Section */}
