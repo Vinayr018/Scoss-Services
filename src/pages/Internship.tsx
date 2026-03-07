@@ -1,11 +1,11 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WarmBackground } from "@/components/WarmBackground";
+import { SEOHead } from "@/components/SEOHead";
 import { motion } from "framer-motion";
 import { ArrowRight, BookOpen, Code, Users, Award, Clock, MapPin, Phone, Briefcase, Rocket, GraduationCap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
 
 const internshipPrograms = [
   {
@@ -48,23 +48,22 @@ const internshipPrograms = [
 
 const benefits = [
   { icon: Award, text: "Industry-recognized certificate on completion" },
-  { icon: Users, text: "Mentorship from experienced professionals" },
-  { icon: Briefcase, text: "Real-world project experience" },
-  { icon: Clock, text: "Flexible schedules for students" },
-  { icon: Rocket, text: "Placement assistance for top performers" },
+  { icon: Clock, text: "Flexible timing for students" },
+  { icon: Users, text: "Mentorship from industry experts" },
+  { icon: Rocket, text: "Real project experience" },
 ];
 
 const Internship = () => {
-  useEffect(() => {
-    document.title = "Internship Programs | SCOSS Services Tumkur";
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) {
-      meta.setAttribute("content", "Join SCOSS Services internship programs in Tumkur. Gain hands-on experience in web development, digital marketing, software development, and more.");
-    }
-  }, []);
-
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <SEOHead
+        title="Internship Programs | SCOSS Services Tumkur"
+        description="Join SCOSS Services internship programs in Tumkur. Gain hands-on experience in web development, digital marketing, software development, and more."
+        breadcrumbs={[
+          { name: "Home", href: "/" },
+          { name: "Internship", href: "/internship" },
+        ]}
+      />
       <Navbar />
 
       {/* Hero */}

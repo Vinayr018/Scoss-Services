@@ -3,6 +3,7 @@ import { Target, Eye, Heart, Users, Award, Rocket, Calendar, Lightbulb, Graduati
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WarmBackground } from "@/components/WarmBackground";
+import { SEOHead } from "@/components/SEOHead";
 import companyBuilding from "@/assets/company-building.jpg";
 
 const values = [
@@ -48,13 +49,22 @@ const offerings = [
   {
     icon: Users,
     title: "Recruitment Assistance",
-    description: "Partnering with companies to ensure smooth transition from academia to professional world."
+    description: "Connecting talented individuals with the right career opportunities through our network."
   },
 ];
 
 const About = () => {
   return (
     <div className="min-h-screen bg-background text-foreground relative overflow-hidden">
+      <SEOHead
+        title="About SCOSS Services - IT Solutions Company in Tumkur"
+        description="Learn about SCOSS Services, a leading IT solutions provider in Tumkur, Karnataka. 10+ years of experience delivering innovative technology solutions."
+        schemaType="AboutPage"
+        breadcrumbs={[
+          { name: "Home", href: "/" },
+          { name: "About Us", href: "/about" },
+        ]}
+      />
       <WarmBackground />
       <Navbar />
       
