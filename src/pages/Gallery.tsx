@@ -90,6 +90,15 @@ const Gallery = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground relative overflow-hidden">
+      <SEOHead
+        title="Gallery - SCOSS Services Tumkur"
+        description="View our gallery of events, training sessions, and campus drives at SCOSS Services Tumkur."
+        schemaType="CollectionPage"
+        breadcrumbs={[
+          { name: "Home", href: "/" },
+          { name: "Gallery", href: "/gallery" },
+        ]}
+      />
       <WarmBackground />
       <Navbar />
       
