@@ -65,9 +65,23 @@ const benefits = [
   { icon: CheckCircle, text: "Industry-best practices" },
 ];
 
+const whyChooseUs = [
+  { icon: Zap, text: "Lightning-fast loading speeds under 2 seconds" },
+  { icon: TabletSmartphone, text: "100% mobile responsive on all devices" },
+  { icon: Search, text: "SEO-optimized for higher search rankings" },
+  { icon: Lock, text: "SSL secured with regular backups" },
+  { icon: CheckCircle, text: "Clean, maintainable code architecture" },
+];
+
+const relatedServices = [
+  { icon: Megaphone, title: "Digital Marketing", href: "/services/digital-marketing" },
+  { icon: Globe, title: "Cloud Solutions", href: "/services/cloud-solutions" },
+];
+
 const WebDevelopment = () => {
   const [formData, setFormData] = useState({
     name: "",
+    email: "",
     phone: "",
     company: "",
     details: "",
