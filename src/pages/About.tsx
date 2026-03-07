@@ -3,58 +3,22 @@ import { Target, Eye, Heart, Users, Award, Rocket, Calendar, Lightbulb, Graduati
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WarmBackground } from "@/components/WarmBackground";
+import { SEOHead } from "@/components/SEOHead";
 import companyBuilding from "@/assets/company-building.jpg";
 
-const values = [
-  {
-    icon: Target,
-    title: "Mission",
-    description: "To empower businesses with innovative technology solutions that drive growth, efficiency, and digital transformation in an ever-evolving digital landscape."
-  },
-  {
-    icon: Eye,
-    title: "Vision",
-    description: "To be the leading technology partner for businesses worldwide, known for delivering exceptional software solutions and pioneering digital innovation."
-  },
-  {
-    icon: Heart,
-    title: "Values",
-    description: "We believe in integrity, innovation, and excellence. Our commitment to quality and customer satisfaction drives everything we do."
-  },
-];
-
-const stats = [
-  { icon: Users, value: "50+", label: "Team Members" },
-  { icon: Award, value: "200+", label: "Projects Delivered" },
-  { icon: Rocket, value: "10+", label: "Years Experience" },
-];
-
-const offerings = [
-  {
-    icon: GraduationCap,
-    title: "Student Empowerment",
-    description: "Building websites and apps while upskilling students and fostering innovation and entrepreneurship."
-  },
-  {
-    icon: Briefcase,
-    title: "Internships & Projects",
-    description: "Hands-on experience through internships, project opportunities, and placement training."
-  },
-  {
-    icon: Lightbulb,
-    title: "Startup Support",
-    description: "Promoting student-led startups by bridging the gap between education and industry."
-  },
-  {
-    icon: Users,
-    title: "Recruitment Assistance",
-    description: "Partnering with companies to ensure smooth transition from academia to professional world."
-  },
-];
-
+// ... keep existing code
 const About = () => {
   return (
     <div className="min-h-screen bg-background text-foreground relative overflow-hidden">
+      <SEOHead
+        title="About SCOSS Services - IT Solutions Company in Tumkur"
+        description="Learn about SCOSS Services, a leading IT solutions provider in Tumkur, Karnataka. 10+ years of experience delivering innovative technology solutions."
+        schemaType="AboutPage"
+        breadcrumbs={[
+          { name: "Home", href: "/" },
+          { name: "About Us", href: "/about" },
+        ]}
+      />
       <WarmBackground />
       <Navbar />
       
