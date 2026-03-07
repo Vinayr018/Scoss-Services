@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WarmBackground } from "@/components/WarmBackground";
+import { SEOHead } from "@/components/SEOHead";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send, Clock, MessageSquare, Facebook, Instagram, Linkedin, Twitter, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -70,21 +71,30 @@ const Contact = () => {
       href: "mailto:scossservices@gmail.com",
     },
     {
-      icon: MessageCircle,
-      label: "WhatsApp Us",
-      value: "+91-91130 30506",
-      href: "https://wa.me/919113030506?text=Hello%20SCOSS%20Services",
+      icon: MapPin,
+      label: "Visit Us",
+      value: "Tumkur, Karnataka, India",
+      href: "#",
     },
     {
       icon: Clock,
-      label: "Business Hours",
-      value: "Mon - Sat: 9:00 AM - 7:00 PM",
+      label: "Working Hours",
+      value: "Mon - Sat: 9:00 AM - 6:00 PM",
       href: "#",
     },
   ];
 
   return (
     <div className="min-h-screen bg-background text-foreground relative overflow-hidden">
+      <SEOHead
+        title="Contact SCOSS Services - IT Solutions in Tumkur"
+        description="Get in touch with SCOSS Services for IT solutions, web development, and digital marketing services in Tumkur. Call +91-9113030506."
+        schemaType="ContactPage"
+        breadcrumbs={[
+          { name: "Home", href: "/" },
+          { name: "Contact", href: "/contact" },
+        ]}
+      />
       <WarmBackground />
       <Navbar />
       <main className="pt-32 pb-20 relative z-10">
