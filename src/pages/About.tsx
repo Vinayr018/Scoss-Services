@@ -6,7 +6,53 @@ import { WarmBackground } from "@/components/WarmBackground";
 import { SEOHead } from "@/components/SEOHead";
 import companyBuilding from "@/assets/company-building.jpg";
 
-// ... keep existing code
+const values = [
+  {
+    icon: Target,
+    title: "Mission",
+    description: "To empower businesses with innovative technology solutions that drive growth, efficiency, and digital transformation in an ever-evolving digital landscape."
+  },
+  {
+    icon: Eye,
+    title: "Vision",
+    description: "To be the leading technology partner for businesses worldwide, known for delivering exceptional software solutions and pioneering digital innovation."
+  },
+  {
+    icon: Heart,
+    title: "Values",
+    description: "We believe in integrity, innovation, and excellence. Our commitment to quality and customer satisfaction drives everything we do."
+  },
+];
+
+const stats = [
+  { icon: Users, value: "50+", label: "Team Members" },
+  { icon: Award, value: "200+", label: "Projects Delivered" },
+  { icon: Rocket, value: "10+", label: "Years Experience" },
+];
+
+const offerings = [
+  {
+    icon: GraduationCap,
+    title: "Student Empowerment",
+    description: "Building websites and apps while upskilling students and fostering innovation and entrepreneurship."
+  },
+  {
+    icon: Briefcase,
+    title: "Internships & Projects",
+    description: "Hands-on experience through internships, project opportunities, and placement training."
+  },
+  {
+    icon: Lightbulb,
+    title: "Startup Support",
+    description: "Promoting student-led startups by bridging the gap between education and industry."
+  },
+  {
+    icon: Users,
+    title: "Recruitment Assistance",
+    description: "Connecting talented individuals with the right career opportunities through our network."
+  },
+];
+
 const About = () => {
   return (
     <div className="min-h-screen bg-background text-foreground relative overflow-hidden">
