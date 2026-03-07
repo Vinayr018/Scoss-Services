@@ -1,11 +1,11 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WarmBackground } from "@/components/WarmBackground";
+import { SEOHead } from "@/components/SEOHead";
 import { motion } from "framer-motion";
 import { ArrowRight, Phone, MapPin, type LucideIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
 
 interface ServiceItem {
   icon: LucideIcon;
@@ -57,16 +57,19 @@ const ServicePageLayout = ({
   benefits,
   relatedServices,
 }: ServicePageLayoutProps) => {
-  useEffect(() => {
-    document.title = metaTitle;
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) {
-      meta.setAttribute("content", metaDescription);
-    }
-  }, [metaTitle, metaDescription]);
-
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <SEOHead
+        title={metaTitle}
+        description={metaDescription}
+        schemaType="Service"
+        serviceName={badge}
+        breadcrumbs={[
+          { name: "Home", href: "/" },
+          { name: "Services", href: "/services" },
+          { name: badge, href: "" },
+        ]}
+      />
       <Navbar />
 
       {/* Hero Section */}
