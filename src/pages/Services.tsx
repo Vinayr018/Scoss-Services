@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WarmBackground } from "@/components/WarmBackground";
+import { SEOHead } from "@/components/SEOHead";
 import { motion } from "framer-motion";
 import { ArrowRight, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -47,29 +48,29 @@ const services = [
   },
   {
     title: "Cybersecurity Services",
-    description: "Comprehensive security solutions to protect your digital assets and data.",
-    features: ["Security assessment", "Threat detection", "Incident response", "Compliance", "Security training"],
+    description: "Protect your business from cyber threats with our comprehensive security solutions.",
+    features: ["Security audits", "Threat detection", "Data protection", "Compliance management", "Incident response"],
     image: cybersecurityImg,
     href: "/services/cybersecurity",
   },
   {
     title: "IT Consulting",
-    description: "Strategic technology consulting to drive digital transformation and business growth.",
-    features: ["IT strategy", "Digital transformation", "Technology roadmap", "Process optimization", "Vendor management"],
+    description: "Expert IT consulting to align technology with your business goals.",
+    features: ["IT strategy", "Digital transformation", "Technology assessment", "Vendor evaluation", "Project management"],
     image: itConsultingImg,
     href: "/services/it-consulting",
   },
   {
     title: "Network Solutions",
-    description: "Reliable network infrastructure design, implementation, and management.",
-    features: ["Network design", "Implementation", "Monitoring", "Troubleshooting", "Performance optimization"],
+    description: "Robust network infrastructure design, implementation, and management.",
+    features: ["Network design", "LAN/WAN setup", "Wireless networks", "Network security", "Performance monitoring"],
     image: networkImg,
     href: "/services/network-solutions",
   },
   {
     title: "Technical Support",
-    description: "24/7 technical support and maintenance services to keep your systems running smoothly.",
-    features: ["Help desk", "Remote support", "On-site support", "System maintenance", "Hardware support"],
+    description: "Reliable technical support to keep your systems running smoothly.",
+    features: ["24/7 support", "Remote assistance", "On-site support", "System maintenance", "Troubleshooting"],
     image: supportImg,
     href: "/services/technical-support",
   },
@@ -78,6 +79,15 @@ const services = [
 const Services = () => {
   return (
     <div className="min-h-screen bg-background text-foreground relative overflow-hidden">
+      <SEOHead
+        title="IT Services in Tumkur - SCOSS Services"
+        description="Explore SCOSS Services' comprehensive IT solutions: web development, digital marketing, cloud solutions, cybersecurity, and more in Tumkur."
+        schemaType="CollectionPage"
+        breadcrumbs={[
+          { name: "Home", href: "/" },
+          { name: "Services", href: "/services" },
+        ]}
+      />
       <WarmBackground />
       <Navbar />
       <main className="pt-32 pb-20 relative z-10">
