@@ -7,6 +7,7 @@ import scossLogo from "@/assets/scoss-logo.png";
 
 const navLinks = [
   { name: "Home", href: "/" },
+  { name: "About Us", href: "/about" },
   { 
     name: "Services", 
     href: "/services",
@@ -17,10 +18,9 @@ const navLinks = [
       { name: "All Services", href: "/services" },
     ]
   },
-  { name: "About Us", href: "/about" },
   { name: "Gallery", href: "/gallery" },
   { name: "Internship", href: "/internship" },
-  { name: "Contact", href: "/contact" },
+  { name: "Contact Us", href: "/contact" },
 ];
 
 const socialLinks = [
