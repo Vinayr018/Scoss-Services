@@ -24,11 +24,6 @@ const values = [
   },
 ];
 
-const stats = [
-  { icon: Users, value: "50+", label: "Team Members" },
-  { icon: Award, value: "200+", label: "Projects Delivered" },
-  { icon: Rocket, value: "10+", label: "Years Experience" },
-];
 
 const offerings = [
   {
