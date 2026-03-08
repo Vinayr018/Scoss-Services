@@ -17,9 +17,9 @@ export const SplashScreen = ({ onComplete }: { onComplete: () => void }) => {
   }, [onComplete]);
 
   useEffect(() => {
-    const t1 = window.setTimeout(() => setPhase("name"), 1200);
-    const t2 = window.setTimeout(() => setPhase("tagline"), 2400);
-    const t3 = window.setTimeout(finish, 5000);
+    const t1 = window.setTimeout(() => setPhase("name"), 800);
+    const t2 = window.setTimeout(() => setPhase("tagline"), 1600);
+    const t3 = window.setTimeout(finish, 3500);
     return () => { window.clearTimeout(t1); window.clearTimeout(t2); window.clearTimeout(t3); };
   }, [finish]);
 
