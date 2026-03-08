@@ -6,17 +6,21 @@ import introSplashVideo from "@/assets/intro-splash-reference.mp4";
 export const SplashScreen = ({ onComplete }: { onComplete: () => void }) => {
   const [isExiting, setIsExiting] = useState(false);
   const hasCompletedRef = useRef(false);
+  const exitTimeoutRef = useRef<number | null>(null);
 
   const completeSplash = useCallback(() => {
     if (hasCompletedRef.current) return;
     hasCompletedRef.current = true;
     setIsExiting(true);
-    window.setTimeout(onComplete, 700);
+    exitTimeoutRef.current = window.setTimeout(onComplete, 700);
   }, [onComplete]);
 
   useEffect(() => {
     const fallbackTimeout = window.setTimeout(completeSplash, 7000);
-    return () => window.clearTimeout(fallbackTimeout);
+    return () => {
+      window.clearTimeout(fallbackTimeout);
+      if (exitTimeoutRef.current) window.clearTimeout(exitTimeoutRef.current);
+    };
   }, [completeSplash]);
 
   return (
