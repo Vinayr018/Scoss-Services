@@ -69,46 +69,6 @@ export const HeroSection = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="text-left max-w-4xl"
         >
-          {/* Badge */}
-          <motion.div
-            initial={{ opacity: 0, x: -30, scale: 0.9 }}
-            animate={{ opacity: 1, x: 0, scale: 1 }}
-            transition={{ delay: 0.2, duration: 0.6, type: "spring", stiffness: 120 }}
-            className="relative inline-flex items-center gap-3 px-6 py-3 rounded-full mb-8 group cursor-default overflow-hidden"
-          >
-            <div className="absolute inset-0 rounded-full p-[1.5px] bg-gradient-to-r from-secondary via-primary to-secondary bg-[length:200%_100%] animate-[shimmer_3s_linear_infinite]">
-              <div className="w-full h-full rounded-full bg-black/60 backdrop-blur-xl" />
-            </div>
-            <motion.div
-              className="absolute inset-0 rounded-full opacity-40"
-              animate={{ boxShadow: ["0 0 15px hsl(var(--secondary)/0.3)", "0 0 30px hsl(var(--secondary)/0.6)", "0 0 15px hsl(var(--secondary)/0.3)"] }}
-              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            />
-            <div className="relative z-10 flex items-center gap-3">
-              <motion.div
-                animate={{ rotate: [0, 15, -15, 0], scale: [1, 1.2, 1] }}
-                transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
-              >
-                <Sparkles className="w-5 h-5 text-secondary drop-shadow-[0_0_6px_hsl(var(--secondary)/0.8)]" />
-              </motion.div>
-              <span className="text-sm font-semibold tracking-wide">
-                <span className="text-white/80">Welcome to </span>
-                <motion.span
-                  className="font-black bg-gradient-to-r from-secondary via-yellow-300 to-secondary bg-clip-text text-transparent bg-[length:200%_100%]"
-                  animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
-                  transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-                >
-                  SCOSS Services
-                </motion.span>
-              </span>
-              <motion.div
-                animate={{ x: [0, 4, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity }}
-              >
-                <ArrowRight className="w-4 h-4 text-secondary/70" />
-              </motion.div>
-            </div>
-          </motion.div>
 
           {/* Main heading */}
           <motion.h1
