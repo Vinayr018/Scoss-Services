@@ -215,7 +215,7 @@ export const SplashScreen = ({ onComplete }: { onComplete: () => void }) => {
           }}
           initial={{ width: "0%" }}
           animate={{ width: "100%" }}
-          transition={{ duration: 4.5, ease: "easeInOut" }}
+          transition={{ duration: 3.2, ease: "easeInOut" }}
         />
       </div>
 
