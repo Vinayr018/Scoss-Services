@@ -11,51 +11,12 @@ import hero6 from "@/assets/hero/hero-6.jpeg";
 
 const heroImages = [hero1, hero2, hero3, hero4, hero5, hero6];
 
-const slides = [
-  {
-    title1: "Leading IT Services",
-    title2: "Company in Tumkur",
-    tagline: "Digital Transformation Services",
-    description: "Transform your business with comprehensive IT services, custom software development, and technology consulting.",
-  },
-  {
-    title1: "Digital Marketing",
-    title2: "That Delivers Results",
-    tagline: "Grow Your Online Presence",
-    description: "SEO, social media marketing, PPC campaigns, and content marketing strategies to boost your visibility and revenue.",
-  },
-  {
-    title1: "Professional Website",
-    title2: "Design & Development",
-    tagline: "Custom Solutions for Your Business",
-    description: "From business websites to e-commerce platforms, we create digital experiences that convert visitors into customers.",
-  },
-];
-
-const stats = [
-  { value: "500+", label: "Projects Delivered", icon: Zap },
-  { value: "99%", label: "Client Satisfaction", icon: Users },
-  { value: "24/7", label: "Expert Support", icon: Shield },
-];
-
-export const HeroSection = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [currentImage, setCurrentImage] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 6000);
-    return () => clearInterval(timer);
-  }, []);
-
-  useEffect(() => {
-    const imgTimer = setInterval(() => {
-      setCurrentImage((prev) => (prev + 1) % heroImages.length);
-    }, 3000);
-    return () => clearInterval(imgTimer);
-  }, []);
-  const slide = slides[currentSlide];
+const heroContent = {
+  title1: "Leading IT Services",
+  title2: "Company in Tumkur",
+  tagline: "Digital Transformation Services",
+  description: "Transform your business with comprehensive IT services, custom software development, and technology consulting.",
+};
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
