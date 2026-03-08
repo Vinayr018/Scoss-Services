@@ -109,6 +109,10 @@ export default {
           "0%, 100%": { borderRadius: "60% 40% 30% 70% / 60% 30% 70% 40%" },
           "50%": { borderRadius: "30% 60% 70% 40% / 50% 60% 30% 60%" },
         },
+        "shimmer": {
+          "0%": { backgroundPosition: "200% 50%" },
+          "100%": { backgroundPosition: "-200% 50%" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
