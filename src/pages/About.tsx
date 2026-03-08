@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Target, Eye, Heart, Users, Award, Rocket, Calendar, Lightbulb, GraduationCap, Briefcase } from "lucide-react";
+import { Target, Eye, Heart, Users, Calendar, Lightbulb, GraduationCap, Briefcase } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WarmBackground } from "@/components/WarmBackground";
@@ -24,11 +24,6 @@ const values = [
   },
 ];
 
-const stats = [
-  { icon: Users, value: "50+", label: "Team Members" },
-  { icon: Award, value: "200+", label: "Projects Delivered" },
-  { icon: Rocket, value: "10+", label: "Years Experience" },
-];
 
 const offerings = [
   {
@@ -192,35 +187,6 @@ const About = () => {
             ))}
           </motion.div>
 
-          {/* Company stats */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="glass-card p-10"
-          >
-            <div className="grid md:grid-cols-3 gap-8">
-              {stats.map((stat, index) => (
-                <motion.div
-                  key={stat.label}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1, duration: 0.5 }}
-                  className="text-center"
-                >
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                    <stat.icon className="w-6 h-6 text-primary" />
-                  </div>
-                  <div className="text-4xl font-bold text-primary glow-text mb-2">
-                    {stat.value}
-                  </div>
-                  <div className="text-muted-foreground">{stat.label}</div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
         </div>
       </main>
 
