@@ -8,35 +8,20 @@ export const ServicesSection = () => {
   return (
     <section id="services" className="relative min-h-screen flex items-center overflow-hidden">
       <WarmBackground />
-      <div className="container relative z-10 px-4 md:px-6 py-20">
+      <div className="container relative z-10 px-4 md:px-6">
         {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-14"
         >
-          <motion.span
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-primary/10 text-primary text-sm font-bold mb-6 border border-primary/20"
-          >
+          <span className="text-primary text-sm uppercase tracking-widest mb-4 block font-bold">
             EXPLORE OUR EXPERTISE
-          </motion.span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-4 text-foreground">
-            Services Designed for{" "}
-            <span className="text-primary relative">
-              Your Success
-              <motion.div
-                className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary via-secondary to-primary rounded-full"
-                initial={{ scaleX: 0 }}
-                whileInView={{ scaleX: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.5, duration: 0.8 }}
-              />
-            </span>
+          </span>
+          <h2 className="text-4xl md:text-5xl font-black mb-4 text-foreground">
+            Services Designed for Your Success
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             We offer reliable solutions to support your business growth and development
@@ -48,14 +33,14 @@ export const ServicesSection = () => {
           {servicesData.map((service, index) => (
             <motion.div
               key={service.title}
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, delay: index * 0.08 }}
+              transition={{ duration: 0.5, delay: index * 0.08 }}
             >
               <Link
                 to={service.link}
-                className="relative group cursor-pointer rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 block"
+                className="relative group cursor-pointer rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 block"
                 style={{ aspectRatio: "3/4" }}
               >
                 {/* Background image */}
@@ -66,9 +51,9 @@ export const ServicesSection = () => {
                 />
 
                 {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent transition-all duration-500 group-hover:from-black/95 group-hover:via-black/60" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent transition-all duration-500 group-hover:from-black/90 group-hover:via-black/50" />
 
-                {/* Accent line with glow */}
+                {/* Accent line */}
                 <motion.div
                   className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-secondary to-primary origin-left"
                   initial={{ scaleX: 0 }}
@@ -76,11 +61,6 @@ export const ServicesSection = () => {
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.08 + 0.3 }}
                 />
-
-                {/* Service number */}
-                <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center border border-white/20 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                  <span className="text-white/80 text-sm font-bold">{String(index + 1).padStart(2, '0')}</span>
-                </div>
 
                 {/* Content */}
                 <div className="absolute inset-0 flex flex-col justify-end p-5">
