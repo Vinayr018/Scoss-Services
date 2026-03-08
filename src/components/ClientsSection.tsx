@@ -51,19 +51,9 @@ export const ClientsSection = () => {
         <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-10" />
         <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-10" />
         
-        <motion.div
-          className="flex gap-12 items-center"
-          animate={{
-            x: ["0%", "-50%"],
-          }}
-          transition={{
-            x: {
-              repeat: Infinity,
-              repeatType: "loop",
-              duration: 20,
-              ease: "linear",
-            },
-          }}
+        <div
+          className="flex gap-12 items-center animate-marquee"
+          style={{ width: 'max-content' }}
         >
           {duplicatedClients.map((client, index) => (
             <div
@@ -73,11 +63,15 @@ export const ClientsSection = () => {
               <img
                 src={client.logo}
                 alt={client.name}
-                className="h-16 md:h-20 w-auto object-contain max-w-[160px] md:max-w-[200px] grayscale group-hover:grayscale-0 transition-all duration-300"
+                className={`w-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-300 ${
+                  client.name === "Findreams" || client.name === "SLV Diesel"
+                    ? "h-24 md:h-32 max-w-[220px] md:max-w-[280px]"
+                    : "h-16 md:h-20 max-w-[160px] md:max-w-[200px]"
+                }`}
               />
             </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );
