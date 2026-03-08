@@ -211,37 +211,6 @@ export const HeroSection = () => {
               </a>
             </motion.div>
 
-            {/* Stats with enhanced design */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1, duration: 0.8 }}
-              className="mt-16 flex flex-wrap gap-6 md:gap-12"
-            >
-              {stats.map((stat, index) => (
-                <motion.div 
-                  key={stat.label} 
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 1.1 + index * 0.15, duration: 0.5 }}
-                  className="relative group"
-                >
-                  <div className="flex items-center gap-4 p-4 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-secondary/30 transition-all duration-300">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-secondary/20 to-primary/10 flex items-center justify-center">
-                      <stat.icon className="w-6 h-6 text-secondary" />
-                    </div>
-                    <div>
-                      <div className="text-3xl md:text-4xl font-black text-secondary">
-                        {stat.value}
-                      </div>
-                      <div className="text-sm text-white/70 font-medium uppercase tracking-wider">
-                        {stat.label}
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
           </motion.div>
         </AnimatePresence>
       </div>
