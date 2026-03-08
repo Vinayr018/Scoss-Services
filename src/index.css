@@ -44,6 +44,9 @@
     --glow-secondary: 33 100% 64%;
     --glass: 0 0% 98%;
     --glass-border: 220 13% 91%;
+    --whatsapp: 142 70% 49%;
+    --whatsapp-hover: 142 73% 43%;
+    --whatsapp-foreground: 0 0% 100%;
 
     /* Dark navbar */
     --navbar-bg: 220 30% 12%;
