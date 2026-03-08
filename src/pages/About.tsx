@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Target, Eye, Heart, Users, Award, Rocket, Calendar, Lightbulb, GraduationCap, Briefcase } from "lucide-react";
+import { Target, Eye, Heart, Users, Calendar, Lightbulb, GraduationCap, Briefcase } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WarmBackground } from "@/components/WarmBackground";
